@@ -119,9 +119,9 @@ int main() {
 	init_read_file("default_stopwords_list.txt");
 	get_stopwords_list_file();
 	free_read_file();
-	printf("before removing size: %d\n", wtb.size());
+	printf("number of words before removing stopwords: %d\n", wtb.size());
 	print_sorted_words_file("before_removing_stopwords.txt");
 	remove_stopwords_wtb();
-	printf("after removing size: %d\n", wtb.size());
+	printf("number of words after removing stopwords: %d\n", wtb.size());
 	print_sorted_words_file("after_removing_stopwords.txt");
 }
