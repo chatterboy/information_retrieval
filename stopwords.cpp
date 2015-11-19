@@ -1,3 +1,6 @@
+// Env: g++11
+// you can see more detail in our github
+// https://github.com/chatterboy/information_retrieval
 #include <cstdio>
 #include <cstring>
 #include <cctype>
