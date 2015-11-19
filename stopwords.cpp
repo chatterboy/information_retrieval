@@ -81,13 +81,34 @@ bool cmp(const pair<int,string>& a, const pair<int,string>& b) {
 	return a.second < b.second;
 }
 
-void print_sorted_words() {
-	vector<pair<int,string>> v;
+void get_sorted_words(vector<pair<int,string>>& v) {
 	for (auto it = wtb.begin(); it != wtb.end(); it++)
 		v.push_back(make_pair(it->second, it->first));
 	sort(v.begin(), v.end(), cmp);
+}
+
+void print_sorted_words() {
+	vector<pair<int,string>> v;
+	get_sorted_words(v);
 	for (auto e : v)
 		printf("%s %d\n", e.second.c_str(), e.first);
+}
+
+void print_sorted_words_file(const char* fname) {
+	vector<pair<int,string>> v;
+	get_sorted_words(v);
+	fout = fopen(fname, "w");
+	for (auto e : v)
+		fprintf(fout, "%s %d\n", e.second.c_str(), e.first);
+	fclose(fout);
+}
+
+void remove_stopwords_wtb() {
+	for (auto sw : swl) {
+		auto p = wtb.find(sw);
+		if (p != wtb.end())
+			wtb.erase(p);
+	}
 }
 
 int main() {
@@ -95,12 +116,12 @@ int main() {
 	while (!read_line_file())
 		get_words_line();
 	free_read_file();
-//	print_sorted_words();
 	init_read_file("default_stopwords_list.txt");
 	get_stopwords_list_file();
 	free_read_file();
-	printf("swl's size: %d\n", swl.size());
-	for (auto w : swl)
-		printf("%s\n", w.c_str());
-
+	printf("before removing size: %d\n", wtb.size());
+	print_sorted_words_file("before_removing_stopwords.txt");
+	remove_stopwords_wtb();
+	printf("after removing size: %d\n", wtb.size());
+	print_sorted_words_file("after_removing_stopwords.txt");
 }
