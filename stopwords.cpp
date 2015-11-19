@@ -3,6 +3,7 @@
 #include <cctype>
 #include <string>
 #include <map>
+#include <set>
 #include <vector>
 #include <utility>
 #include <algorithm>
@@ -10,12 +11,14 @@ using namespace std;
 #define BUFFER_SIZE 128
 #define WHITE_SPACE 0x20
 
-FILE *fin;
+FILE* fin;
+FILE* fout;
 char buf[BUFFER_SIZE];
 map<string,int> wtb;
+set<string> swl;
 
-void init_read_file() {
-	fin = fopen("Adventures_of_Huckleberry_Finn.txt", "r");
+void init_read_file(const char* fname) {
+	fin = fopen(fname, "r");
 }
 
 void free_read_file() {
@@ -29,6 +32,15 @@ int read_line_file() {
 	return 1;
 }
 
+void get_stopwords_list_file() {
+	while (!read_line_file()) {
+		string w(buf);
+		while (w.back() == '\n')
+			w.pop_back();
+		swl.insert(w);
+	}
+}
+
 void change_to_lower(string& w) {
 	int n;
 	n = w.size();
@@ -37,7 +49,7 @@ void change_to_lower(string& w) {
 			w[i] = tolower(w[i]);
 }
 
-void make_words_line() {
+void get_words_line() {
 	int n;
 	bool flag;
 	string w;
@@ -79,9 +91,16 @@ void print_sorted_words() {
 }
 
 int main() {
-	init_read_file();
+	init_read_file("Adventures_of_Huckleberry_Finn.txt");
 	while (!read_line_file())
-		make_words_line();
+		get_words_line();
 	free_read_file();
-	print_sorted_words();
+//	print_sorted_words();
+	init_read_file("default_stopwords_list.txt");
+	get_stopwords_list_file();
+	free_read_file();
+	printf("swl's size: %d\n", swl.size());
+	for (auto w : swl)
+		printf("%s\n", w.c_str());
+
 }
