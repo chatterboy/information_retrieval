@@ -78,15 +78,6 @@ void print_sorted_words() {
 		printf("%s %d\n", e.second.c_str(), e.first);
 }
 
-void _print_sorted_words() {
-	vector<int> v;
-	for (auto it = wtb.begin(); it != wtb.end(); it++)
-		v.push_back(it->second);
-	sort(v.rbegin(), v.rend());
-	for (auto e : v)
-		printf("%d\n", e);
-}
-
 int main() {
 	init_read_file();
 	while (!read_line_file())
