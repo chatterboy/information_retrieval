@@ -119,9 +119,13 @@ int main() {
 	init_read_file("default_stopwords_list.txt");
 	get_stopwords_list_file();
 	free_read_file();
-	printf("number of words before removing stopwords: %d\n", wtb.size());
+	int before_sz = wtb.size();
 	print_sorted_words_file("before_removing_stopwords.txt");
 	remove_stopwords_wtb();
-	printf("number of words after removing stopwords: %d\n", wtb.size());
+	int after_sz = wtb.size();
 	print_sorted_words_file("after_removing_stopwords.txt");
+	fout = fopen("compare_no_words.txt", "w");
+	fprintf(fout, "number of words before removing stopwords: %d\n", before_sz);
+	fprintf(fout, "number of words after removing stopwords: %d", after_sz);
+	fclose(fout);
 }

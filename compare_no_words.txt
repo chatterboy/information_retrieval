@@ -1,0 +1,2 @@
+number of words before removing stopwords: 1219
+number of words after removing stopwords: 1086
