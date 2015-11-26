@@ -49,14 +49,14 @@ int step2(string &s) {
 				 		4, 4, 5, 3, 5,
 				 		7, 5, 4, 5, 7,
 				 		7, 7, 5, 5, 6};
-	static string sf[] = {"ational", "tional", "enci", "anci", "izer",
-						  "abli", "alli", "entli", "eli", "ousli",
-						  "ization", "ation", "ator", "alism", "iveness",
-						  "fulness", "ousness", "aliti", "iviti", "biliti"};
-	static string sf2[] = {"ate", "tion", "ence", "ance", "ize",
-						   "able", "al", "ent", "e", "ous",
-						   "ize", "ate", "ate", "al", "ive",
-						   "ful", "ous", "al", "ive", "ble"};
+	static string sf[] = {	"ational", "tional", "enci", "anci", "izer",
+							"abli", "alli", "entli", "eli", "ousli",
+							"ization", "ation", "ator", "alism", "iveness",
+							"fulness", "ousness", "aliti", "iviti", "biliti"};
+	static string sf2[] = {	"ate", "tion", "ence", "ance", "ize",
+							"able", "al", "ent", "e", "ous",
+							"ize", "ate", "ate", "al", "ive",
+							"ful", "ous", "al", "ive", "ble"};
 	int i;
 	for (i = 0; i < 20; i++)
 		if (s.size() >= len[i] && s.substr(s.size()-len[i], s.size()) == sf[i] && m(s.substr(0, s.size()-len[i])) > 0) {
@@ -79,13 +79,13 @@ int step3(string &s) {
 }
 int step4(string &s) {
 	static int len[] = {2, 4, 4, 2, 2,
-				 4, 4, 3, 5, 4,
-				 3, 3, 2, 3, 3,
-				 3, 3, 3, 3};
-	static string sf[] = {"al", "ance", "ence", "er", "ic",
-				   "able", "ible", "ant", "ement", "ment",
-				   "ent", "ion", "ou", "ism", "ate",
-				   "iti", "ous", "ive", "ize"};
+				 		4, 4, 3, 5, 4,
+				 		3, 3, 2, 3, 3,
+				 		3, 3, 3, 3};
+	static string sf[] = {	"al", "ance", "ence", "er", "ic",
+							"able", "ible", "ant", "ement", "ment",
+							"ent", "ion", "ou", "ism", "ate",
+							"iti", "ous", "ive", "ize"};
 	int i;
 	for (i = 0; i < 19; i++)
 		if (s.size() >= len[i] && s.substr(s.size()-len[i], s.size()) == sf[i] && m(s.substr(0, s.size()-len[i])) > 1) {
