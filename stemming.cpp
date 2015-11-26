@@ -3,14 +3,40 @@
 #include <cstdio>
 #include <iostream>
 #include <string>
+#include <deque>
+#include <vector>
+#include <algorithm>
 using namespace std;
 FILE *fin;
 FILE *fout;
+bool isconstant(char ch) {
+	static char constant[] = {'a', 'e', 'i', 'o', 'u'};
+	int i;
+	for (i = 0; i < 5; i++)
+		if (ch == constant[i])
+			return false;
+	return true;
+}
 int m(string sf) {
-
+	int i;
+	deque<char> form;
+	for (i = 0; i < sf.size(); i++) {
+		if (!isconstant(sf[i]) || (sf[i] == 'y' && i+1 < sf.size() && isconstant(sf[i+1])))
+			form.push_back('v');
+		else
+			form.push_back('c');
+	}
+	form.erase(unique(form.begin(), form.end()), form.end());
+	if (form.front() == 'c') form.pop_front();
+	if (form.back() == 'v') form.pop_back();
+	return (int)form.size() / 2;
 }
 bool v(string sf) {
-
+	int i;
+	for (i = 0; i < sf.size(); i++)
+		if (!isconstant(sf[i]))
+			return true;
+	return false;
 }
 int step1a(string &s) {
 	static int len[] = {4, 3, 2, 1};
@@ -138,4 +164,6 @@ int main() {
 	puts(s2.c_str());
 	puts(s3.c_str());
 	puts(s4.c_str());
+
+	
 }
