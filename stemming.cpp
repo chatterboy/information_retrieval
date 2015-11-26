@@ -24,6 +24,19 @@ int readLineFile() {
 		return 0;
 	return 1;
 }
+void removeNewLine() {
+	int i;
+	i = strlen(buf) - 1;
+	while (i >= 0 && buf[i] == '\n')
+		buf[i--] = '\0';
+}
+void removeFrequency() {
+	char _buf[BUFFER_SIZE];
+	strncpy(_buf, buf, strlen(buf));
+	_buf[strlen(buf)] = '\0';
+	memset(buf, 0, sizeof buf);
+	sscanf(_buf, "%s %*d", buf);
+}
 bool isconstant(char ch) {
 	static char constant[] = {'a', 'e', 'i', 'o', 'u'};
 	int i;
@@ -32,11 +45,12 @@ bool isconstant(char ch) {
 			return false;
 	return true;
 }
-int m(string sf) {
+int m(string s) {
 	int i;
 	deque<char> form;
-	for (i = 0; i < sf.size(); i++) {
-		if (!isconstant(sf[i]) || (sf[i] == 'y' && i+1 < sf.size() && isconstant(sf[i+1])))
+	if (s.empty()) return 0;
+	for (i = 0; i < s.size(); i++) {
+		if (!isconstant(s[i]) || (s[i] == 'y' && i+1 < s.size() && isconstant(s[i+1])))
 			form.push_back('v');
 		else
 			form.push_back('c');
@@ -46,10 +60,28 @@ int m(string sf) {
 	if (form.back() == 'v') form.pop_back();
 	return (int)form.size() / 2;
 }
-bool v(string sf) {
+bool o(string s) {
 	int i;
-	for (i = 0; i < sf.size(); i++)
-		if (!isconstant(sf[i]))
+	deque<char> form;
+	if (s.empty()) return false;
+	for (i = 0; i < s.size(); i++) {
+		if (!isconstant(s[i]) || (s[i] == 'y' && i+1 < s.size() && isconstant(s[i+1])))
+			form.push_back('v');
+		else
+			form.push_back('c');
+	}
+//	form.erase(unique(form.begin(), form.end()), form.end());
+//	if (form.front() == 'c') form.pop_front();
+//	if (form.back() == 'v') form.pop_back();
+	if (form.size() >= 3 && form[form.size()-3] == 'c' && form[form.size()-2] == 'v' && form[form.size()-1] == 'c')
+		if (!(form[form.size()-1] == 'w' || form[form.size()-1] == 'x' || form[form.size()-1] == 'y'))
+			return true;
+	return false;
+}
+bool v(string s) {
+	int i;
+	for (i = 0; i < s.size(); i++)
+		if (!isconstant(s[i]))
 			return true;
 	return false;
 }
@@ -61,6 +93,8 @@ int step1a(string &s) {
 	for (i = 0; i < 4; i++)
 		if (s.size() >= len[i] && s.substr(s.size()-len[i], s.size()) == sf[i]) {
 			s = s.substr(0, s.size()-len[i]) + sf2[i];
+			if (sf[i] == "ss")
+				return 0;
 			return i + 1;
 		}
 	return 0;
@@ -145,13 +179,17 @@ int step4(string &s) {
 }
 int step5a(string &s) {
 	int i;
-	if (s.size() >= 1)
+	if (s.size() >= 1 && s.back() == 'e')
 		for (i = 0; i < 2; i++) {
 			if (m(s.substr(0, s.size()-1)) > 1) {
+				printf("m > 1 : %s -> ", s.c_str());
 				s = s.substr(0, s.size()-1);
+				printf("%s\n", s.c_str());
 				return i + 1;
-			} else if (m(s.substr(0, s.size()-1)) == 1 && s.substr(0, s.size()-1).back() != 'o') {
+			} else if (m(s.substr(0, s.size()-1)) == 1 && !o(s.substr(0, s.size()-1))) {
+				printf("m == 1 : %s -> ", s.c_str());
 				s = s.substr(0, s.size()-1);
+				printf("%s\n", s.c_str());
 				return i + 1;
 			}
 		}
@@ -167,30 +205,46 @@ int step5b(string &s) {
 	return 0;			
 }
 int main() {
-#ifdef TEST
-	fin = fopen("input.in", "r");
-	fout = fopen("output.out", "w");
-	while (!readLineFile())
-		printf("%s", buf);
+	bool changed;
+	fin = fopen("after_removing_stopwords.txt", "r");
+	fout = fopen("after_applying_stemming.txt", "w");
+	while (!readLineFile()) {
+		removeNewLine();
+		removeFrequency();
+		string w(buf);
+		string ww(buf);
+		fprintf(fout, "%s", w.c_str());
+		changed = true;
+		while (changed) {
+			changed = false;
+			if (step1a(ww) > 0) {
+				changed = true;
+				fprintf(fout, " -> step 1a -> %s", ww.c_str());
+			} else if (step1b(ww) > 0) {
+				changed = true;
+				fprintf(fout, " -> step 1b -> %s", ww.c_str());
+			} else if (step1c(ww) > 0) {
+				changed = true;
+				fprintf(fout, " -> step 1c -> %s", ww.c_str());
+			} else if (step2(ww) > 0) {
+				changed = true;
+				fprintf(fout, " -> step 2 -> %s", ww.c_str());
+			} else if (step3(ww) > 0) {
+				changed = true;
+				fprintf(fout, " -> step 3 -> %s", ww.c_str());
+			} else if (step4(ww) > 0) {
+				changed = true;
+				fprintf(fout, " -> step 4 -> %s", ww.c_str());
+			} else if (step5a(ww) > 0) {
+				changed = true;
+				fprintf(fout, " -> step 5a -> %s", ww.c_str());
+			} else if (step5b(ww) > 0) {
+				changed = true;
+				fprintf(fout, " -> step 5b -> %s", ww.c_str());
+			}
+		}
+		fprintf(fout, "\n");
+	}
 	fclose(fin);
 	fclose(fout);
-#else
-
-#endif
-	/*
-	string s1 = "caresses";
-	string s2 = "ponies";
-	string s3 = "caress";
-	string s4 = "cats";
-	step1a(s1);
-	step1a(s2);
-	step1a(s3);
-	step1a(s4);
-	puts(s1.c_str());
-	puts(s2.c_str());
-	puts(s3.c_str());
-	puts(s4.c_str());
-
-	printf("%s\n", getRuleStep1a(0));
-	*/
 }
