@@ -7,5 +7,7 @@
 5. after_removing_stopwords.txt - 스탑워드 제거 후 단어 리스트
 6. compare_no_words.txt - 스탑워드 제거 전과 후의 단어들의 수 비교
 
+# updated
+
 7. stemming.cpp - Porter Algorithm을 단어에 적용시키는 프로그램
 8. after_applying_stemming.txt - stemming.cpp 프로그램 결과 
