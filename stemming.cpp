@@ -1,14 +1,29 @@
 // Porter Stemming Algorithm
 // ref @ http://snowball.tartarus.org/algorithms/porter/stemmer.html
+#define TEST
 #include <cstdio>
+#include <cstring>
+#include <cassert>
 #include <iostream>
 #include <string>
 #include <deque>
 #include <vector>
 #include <algorithm>
 using namespace std;
+#define BUFFER_SIZE 128
 FILE *fin;
 FILE *fout;
+const char* rules[] = {
+	"step 1a", "step 1b", "step 1c", "step 2",
+	"step 3", "step 4", "step 5a", "step 5b"
+};
+char buf[BUFFER_SIZE];
+int readLineFile() {
+	memset(buf, 0, sizeof buf);
+	if (fgets(buf, sizeof buf, fin) != NULL)
+		return 0;
+	return 1;
+}
 bool isconstant(char ch) {
 	static char constant[] = {'a', 'e', 'i', 'o', 'u'};
 	int i;
@@ -152,6 +167,17 @@ int step5b(string &s) {
 	return 0;			
 }
 int main() {
+#ifdef TEST
+	fin = fopen("input.in", "r");
+	fout = fopen("output.out", "w");
+	while (!readLineFile())
+		printf("%s", buf);
+	fclose(fin);
+	fclose(fout);
+#else
+
+#endif
+	/*
 	string s1 = "caresses";
 	string s2 = "ponies";
 	string s3 = "caress";
@@ -165,5 +191,6 @@ int main() {
 	puts(s3.c_str());
 	puts(s4.c_str());
 
-	
+	printf("%s\n", getRuleStep1a(0));
+	*/
 }
