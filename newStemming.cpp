@@ -96,6 +96,12 @@ int ends(stemmer * z, char * s) {
 	return 1;
 }
 
+int r(stemmer * z, char * s) {
+	if (m(z) > 0)
+		setto(z, s);
+	return 0;
+}
+
 void step1ab(stemmer * z) {
 	char ch;
 	if (z->s[z->k - 1] == 's') {
@@ -129,17 +135,23 @@ void step1c(stemmer * z) {
 }
 
 void step2(stemmer * z) {
-	static const int n = 7;
+	static const int n = 20;
 	static char * a[n] = {
-
+		"ational", "tional", "enci", "anci", "izer",
+		"abli", "alli", "entli", "eli", "ousli",
+		"ization", "ation", "ator", "alism", "iveness",
+		"fulness", "ousness", "aliti", "iviti", "biliti"
 	};
 	static char * b[n] = {
-
+		"ate", "tion", "ence", "ance", "ize",
+		"able", "al", "ent", "e", "ous",
+		"ize", "ate", "ate", "al", "ive",
+		"ful", "ous", "al", "ive", "ble"
 	};
 	int i;
 	for (i = 0; i < n; i++)
 		if (ends(z, a[i])) {
-			// 
+			r(z, b[i]);
 			break;
 		}
 }
@@ -147,17 +159,46 @@ void step2(stemmer * z) {
 void step3(stemmer * z) {
 	static const int n = 7;
 	static char * a[n] = {
-
+		"icate", "ative", "alize", "iciti", 
+		"ical", "ful", "ness"
 	};
 	static char * b[n] = {
-
+		"ic", "", "al", "ic",
+		"ic", "", ""
 	};
 	int i;
 	for (i = 0; i < n; i++)
 		if (ends(z, a[i])) {
-			//
+			r(z, b[i]);
 			break;
 		}
+}
+
+void step4(stemmer * z) {
+	static const int n = 19;
+	static char * a[n] = {
+		"al", "ance", "ence", "er", "ic",
+		"able", "ible", "ant", "ement", "ment",
+		"ent", "ion", "ou", "ism", "ate",
+		"iti", "ous", "ive", "ize"
+	};
+	int i;
+	for (i = 0; i < n; i++)
+		if (ends(z, a[i]) && m(z) > 1) {
+			z->k = z->j;
+			break;
+		}
+}
+
+void step5(stemmer * z) {
+	char * s = z->s;
+	int k = z->k;
+	z->j = k;
+	if (b[k - 1] == 'e')
+		if (m(z) > 1 || (m(z) == 1 && !cvc(z, k - 2)))
+			z->k--;
+	if (s[k - 1] == 'l' && d(z, k - 1) && m(z) > 1)
+		z->k--;
 }
 
 // this function tests the m() of a string is correct.
