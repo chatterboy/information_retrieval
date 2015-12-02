@@ -1,8 +1,8 @@
 #include <cstdio>
 #include <cstring>
 
-FILE * fin = fopen("input.txt", "r");
-FILE * fout = fopen("output.txt", "w");
+FILE * fin;
+FILE * fout;
 
 // ok
 // s => [0,k)
@@ -91,7 +91,7 @@ int ends(stemmer * z, char * s) {
 	int k = z->k;
 	char * b = z->s;
 	if (length > k) return 0;
-	if (strcmp(b + k - length, s)) return 0;
+	if (strncmp(b + k - length, s, length)) return 0;
 	z->j = k - length;
 	return 1;
 }
@@ -131,7 +131,7 @@ void step1ab(stemmer * z) {
 
 void step1c(stemmer * z) {
 	if (ends(z, "y") && v(z))
-		z->s[z->k] = 'i';
+		z->s[z->k - 1] = 'i';
 }
 
 void step2(stemmer * z) {
@@ -194,11 +194,40 @@ void step5(stemmer * z) {
 	char * s = z->s;
 	int k = z->k;
 	z->j = k;
-	if (b[k - 1] == 'e')
+	if (s[k - 1] == 'e')
 		if (m(z) > 1 || (m(z) == 1 && !cvc(z, k - 2)))
 			z->k--;
 	if (s[k - 1] == 'l' && d(z, k - 1) && m(z) > 1)
 		z->k--;
+}
+
+int stemming(stemmer * z) {
+	if (z->k > 1) {
+		step1ab(z);
+		step1c(z);
+		step2(z);
+		step3(z);
+		step4(z);
+		step5(z);
+	}
+	return z->k;
+}
+
+void _run() {
+	char s[256];
+	stemmer z;
+	fin = fopen("after_removing_stopwords.txt", "r");
+	fout = fopen("after_applying_stemming.txt", "w");
+	for (;;) {
+		memset(s, 0, sizeof s);
+		if (fscanf(fin, "%s %*d\n", s) == EOF) break;
+		fprintf(fout, "%s -> ", s);
+		z = stemmer(s);
+		s[stemming(&z)] = '\0';
+		fprintf(fout, "%s\n", s);
+	}
+	fclose(fin);
+	fclose(fout);
 }
 
 // this function tests the m() of a string is correct.
@@ -226,7 +255,23 @@ void test2() {
 	printf("%s %d\n", z.s, z.k);
 }
 
+void _test() {
+	char s[256], s2[256];
+	FILE * fin2 = fopen("input.txt", "r");
+	fin = fopen("after_applying_stemming.txt", "r");
+	for (;;) {
+		memset(s, 0, sizeof s);
+		memset(s2, 0, sizeof s2);
+		if (fscanf(fin2, "%s", s) == EOF || fscanf(fin, "%s", s2) == EOF) break;
+		if (strcmp(s, s2))
+			printf("%s %s\n", s, s2);
+	}
+	fclose(fin);
+	fclose(fin2);
+}
+
 int main() {
-	test2();
+	_run();
+	puts("successfully completed!");
 	return 0;
 }
