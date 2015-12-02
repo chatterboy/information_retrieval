@@ -3,15 +3,15 @@ got
 tom
 go
 get
-says -> step 1a -> say -> step 1c -> sai
+sai
 well
 jim
-one -> step 5a -> on
+on
 warn't
 told
 went
 time
-going -> step 1b -> go
+go
 take
 come
 just
@@ -25,12 +25,12 @@ now
 keep
 made
 miss
-nothing -> step 1b -> noth
-say -> step 1c -> sai
+noth
+sai
 want
-wanted -> step 1b -> want
-way -> step 1c -> wai
-anything -> step 1b -> anyth
+want
+wai
+anyth
 back
 next
 right
@@ -38,236 +38,236 @@ set
 think
 en
 make
-people -> step 5a -> peopl
+peopl
 tell
 kill
 must
 old
-pretty -> step 1c -> pretti
+pretti
 sawyer
-something -> step 1b -> someth
+someth
 soon
 watson
-day -> step 1c -> dai
-every -> step 1c -> everi
+dai
+everi
 like
 put
 thing
 till
 ain't
-away -> step 1c -> awai
-called -> step 1b -> call
+awai
+call
 de
 gwyne
-little -> step 5a -> littl
+littl
 long
-things -> step 1a -> thing
+thing
 took
-woods -> step 1a -> wood
-anybody -> step 1c -> anybodi
+wood
+anybodi
 bad
 ben
-hair-ball
-rogers -> step 1a -> roger
+hair-bal
+roger
 still
 two
 along
-always -> step 1a -> alway -> step 1c -> alwai
+alwai
 band
 book
-boy -> step 1c -> boi
+boi
 cave
 done
 ever
-everybody -> step 1c -> everybodi
-everything -> step 1b -> everyth
-hands -> step 1a -> hand
+everybodi
+everyth
+hand
 let
 man
-reckoned -> step 1b -> reckon
+reckon
 six
 three
-us -> step 1a -> u
-used -> step 1b -> us -> step 1a -> u
+u
+us
 big
-body -> step 1c -> bodi
-books -> step 1a -> book
+bodi
+book
 can
-elephants -> step 1a -> elephant -> step 4 -> eleph
+eleph
 gang
 kind
-money -> step 1c -> monei
+monei
 much
-niggers -> step 1a -> nigger
+nigger
 night
 place
-ransomed -> step 1b -> ransom
+ransom
 seen
 sign
-sometimes -> step 1a -> sometime -> step 5a -> sometim
+sometim
 talk
 though
 thousand
 try
-use -> step 5a -> us -> step 1a -> u
-witches -> step 1a -> witche -> step 5a -> witch
-a-rabs -> step 1a -> a-rab
-asked -> step 1b -> ask
+us
+witch
+a-rab
+ask
 begun
-clothes -> step 1a -> clothe -> step 5a -> cloth
+cloth
 dead
-different -> step 4 -> differ
+differ
 fetch
 found
 garden
 give
 heard
 hill
-hundred -> step 1b -> hundr
-killed -> step 1b -> kill
-knowed -> step 1b -> know
+hundr
+kill
+know
 lamp
 longer
-looked -> step 1b -> look
+look
 luck
-maybe -> step 5a -> mayb
+mayb
 new
-nobody -> step 1c -> nobodi
+nobodi
 pap
 read
 stand
 sweat
 thought
 tree
-tried -> step 1b -> tri
+tri
 whole
 without
 bout
-boys -> step 1a -> boy -> step 1c -> boi
+boi
 chapter
 devil
 first
 four
-genies -> step 1a -> geni
+geni
 git
 head
 home
-house -> step 5a -> hous -> step 1a -> hou
+hous
 huck
-huckleberry -> step 1c -> huckleberri
+huckleberri
 itch
-judged -> step 1b -> judg
+judg
 kitchen
-knees -> step 1a -> knee
-listened -> step 1b -> listen
+knee
+listen
 lit
 lot
 me-yow
 might
 mind
-morning -> step 1b -> morn
+morn
 nigger
 oh
-palace -> step 5a -> palac
-ready -> step 1c -> readi
+palac
+readi
 reckon
 rich
 ring
-robbers -> step 1a -> robber
+robber
 rode
-rubbed -> step 1b -> rubb
+rubb
 run
 scratch
-secrets -> step 1a -> secret
+secret
 sight
 sleep
-somebody -> step 1c -> somebodi
+somebodi
 stuff
 sunday-school
-table -> step 5a -> tabl
-times -> step 1a -> time
-together -> step 4 -> togeth
+tabl
+time
+togeth
 town
-tracks -> step 1a -> track
-trees -> step 1a -> tree
+track
+tree
 water
-ways -> step 1a -> way -> step 1c -> wai
-widow's -> step 1a -> widow'
+wai
+widow'
 women
 agin
 amongst
-anyway -> step 1c -> anywai
+anywai
 aunt
-awful -> step 3 -> aw
+aw
 belong
 best
 better
 blood
 boom
 brass
-camels -> step 1a -> camel
-candle -> step 5a -> candl
-candles -> step 1a -> candle -> step 5a -> candl
+camel
+candl
+candl
 cold
-comfortable -> step 4 -> comfort
-considerable -> step 4 -> consider -> step 4 -> consid
-country -> step 1c -> countri
+comfort
+consider
+countri
 cut
 dark
 death
-di'monds -> step 1a -> di'mond
+di'mond
 dollar
-drownded -> step 1b -> drownd
+drownd
 enough
 face
-family -> step 1c -> famili
+famili
 father
-fence -> step 5a -> fenc
-fetched -> step 1b -> fetch
+fenc
+fetch
 find
 finn
-forever -> step 4 -> forev
+forev
 ground
 guard
 hain't
 harper
 hear
 help
-hooks -> step 1a -> hook
+hook
 hung
 idea
-ignorant -> step 4 -> ignor
-itching -> step 1b -> itch
+ignor
+itch
 jo
-judge -> step 5a -> judg
-lay -> step 1c -> lai
+judg
+lai
 left
 light
 live
-lonesome -> step 5a -> lonesom
+lonesom
 look
 lost
 mark
 matter
 mean
 mile
-minute -> step 5a -> minut
-minutes -> step 1a -> minute -> step 5a -> minut
-moses -> step 1a -> mose
-mostly -> step 1c -> mostli
+minut
+minut
+mose
+mostli
 name
 oath
 paper
-piece -> step 5a -> piec
-polly -> step 1c -> polli
+piec
+polli
 quarter
 regular
 rest
 river
 room
-scared -> step 1b -> scar
+scar
 school
-seemed -> step 1b -> seem
+seem
 shoulder
 show
 sir
@@ -278,98 +278,98 @@ start
 stick
 stock
 stood
-stretched -> step 1b -> stretch
+stretch
 t'other
 tin
-trying
-turned -> step 1b -> turn
+try
+turn
 wake
-wants -> step 1a -> want
-watson's -> step 1a -> watson'
-whatever -> step 4 -> whatev
-whenever -> step 4 -> whenev
+want
+watson'
+whatev
+whenev
 window
-wished -> step 1b -> wish
+wish
 wrote
 year
 yo
-you's -> step 1a -> you'
+you'
 account
-advantage -> step 5a -> advantag
-agreed -> step 1b -> agree -> step 5a -> agre -> step 5a -> agr
+advantag
+agre
 ahead
-ambuscade -> step 5a -> ambuscad
-another -> step 4 -> anoth
-apiece -> step 5a -> apiec
-ashes -> step 1a -> ashe -> step 5a -> ash
+ambuscad
+anoth
+apiec
+ash
 ask
 bed
-behave -> step 5a -> behav
+behav
 bit
 black
 breakfast
 build
-bushes -> step 1a -> bushe -> step 5a -> bush
-business -> step 3 -> busi
+bush
+busi
 call
 captain
-cattle -> step 5a -> cattl
-cents -> step 1a -> cent
+cattl
+cent
 church
 clumb
-considable -> step 4 -> consid
+consid
 correct
-course -> step 5a -> cours -> step 1a -> cour
-crawled -> step 1b -> crawl
-cried -> step 1b -> cri
+cours
+crawl
+cri
 cross
-crossed -> step 1b -> cross
+cross
 crowd
 dasn't
-days -> step 1a -> day -> step 1c -> dai
+dai
 den
-dey's -> step 1a -> dey'
+dey'
 die
 dog
-dollars -> step 1a -> dollar
+dollar
 door
-douglas -> step 1a -> dougla
+dougla
 drop
 ear
-easy -> step 1c -> easi
-eating -> step 1b -> eat
+easi
+eat
 em
 even
 except
 fall
 feel
 fell
-fellows -> step 1a -> fellow
+fellow
 felt
 fine
 five
-five-center -> step 4 -> five-cent -> step 4 -> five-c
+five-cent
 fool
 forgot
-fortune -> step 5a -> fortun
+fortun
 fun
-getting -> step 1b -> gett
-greasy -> step 1c -> greasi
-guns -> step 1a -> gun
+gett
+greasi
+gun
 hair
-happened -> step 1b -> happen
+happen
 hard
 harm
 hat
 hid
 high
-hogs -> step 1a -> hog
+hog
 hole
 hollow
 hour
-i's -> step 1a -> i'
+i'
 inch
-inside -> step 5a -> insid
+insid
 interest
 iron
 join
@@ -378,50 +378,50 @@ kin
 laid
 last
 lick
-lies -> step 1a -> li
+li
 life
-liked -> step 1b -> lik
+lik
 limb
-living -> step 1b -> liv
-loose -> step 5a -> loos -> step 1a -> loo
+liv
+loos
 mad
-magicians -> step 1a -> magician
-mainly -> step 1c -> mainli
-makes -> step 1a -> make
-many -> step 1c -> mani
-marry -> step 1c -> marri
-mary -> step 1c -> mari
-means -> step 1a -> mean
+magician
+mainli
+make
+mani
+marri
+mari
+mean
 meant
-mighty -> step 1c -> mighti
-miles -> step 1a -> mile
+mighti
+mile
 mouth
 neck
-noise -> step 5a -> nois -> step 1a -> noi
-notice -> step 5a -> notic
-noticed -> step 1b -> notic
-ole -> step 5a -> ol
+nois
+notic
+notic
+ol
 open
 path
-places -> step 1a -> place
-played -> step 1b -> play -> step 1c -> plai
-please -> step 5a -> pleas -> step 1a -> plea
+place
+plai
+pleas
 po
-poked -> step 1b -> pok
+pok
 poor
 potato
-pray -> step 1c -> prai
-providence -> step 4 -> provid
-pulled -> step 1b -> pull
+prai
+provid
+pull
 quick
 ransom
 resk
 rob
 robber
-robbery -> step 1c -> robberi
+robberi
 round
-rubs -> step 1a -> rub
-sawyer's -> step 1a -> sawyer'
+rub
+sawyer'
 second
 secret
 seem
@@ -429,139 +429,139 @@ self
 sell
 seven
 shed
-showed -> step 1b -> show
+show
 sick
 side
 silver
-slipped -> step 1b -> slipp
+slipp
 snow
-soldiers -> step 1a -> soldier
-somebody's -> step 1a -> somebody'
+soldier
+somebody'
 sort
 sound
-spaniards -> step 1a -> spaniard
+spaniard
 spec
 spend
 spider
-stars -> step 1a -> star
-started -> step 1b -> start
-stay -> step 1c -> stai
+star
+start
+stai
 stile
 straight
 stuck
-sunday -> step 1c -> sundai
+sundai
 supper
 sure
-swords -> step 1a -> sword
-talked -> step 1b -> talk
-talking -> step 1b -> talk
+sword
+talk
+talk
 tanyard
-tiptoeing -> step 1b -> tiptoe -> step 5a -> tipto
-tired -> step 1b -> tir
-touched -> step 1b -> touch
-trouble -> step 5a -> troubl
+tipto
+tir
+touch
+troubl
 truth
 turn
-twelve -> step 5a -> twelv
+twelv
 uncommon
 uv
-village -> step 5a -> villag
-waiting -> step 1b -> wait
+villag
+wait
 white
 whoever
-wicked -> step 1b -> wick
+wick
 word
 world
 write
-yes -> step 1a -> ye
+ye
 yit
-a-bothering -> step 1b -> a-bother -> step 4 -> a-both
-a-going -> step 1b -> a-go
-a-gwyne -> step 5a -> a-gwyn
-a-ripping -> step 1b -> a-ripp
-a-rolling -> step 1b -> a-roll
-a-shaking -> step 1b -> a-shak
-acted -> step 1b -> act
-adventures -> step 1a -> adventure -> step 5a -> adventur
-afterwards -> step 1a -> afterward
-allowed -> step 1b -> allow
-alone -> step 5a -> alon
+a-both
+a-go
+a-gwyn
+a-ripp
+a-rol
+a-shak
+act
+adventur
+afterward
+allow
+alon
 among
-angels -> step 1a -> angel
-ankle -> step 5a -> ankl
+angel
+ankl
 answer
 anyhow
-anywheres -> step 1a -> anywhere -> step 5a -> anywher -> step 4 -> anywh
-ashamed -> step 1b -> asham
-ashore -> step 5a -> ashor
-asking -> step 1b -> ask
+anywher
+asham
+ashor
+ask
 asleep
-authorities -> step 1a -> authoriti -> step 4 -> author
-awhile -> step 5a -> awhil
+author
+awhil
 bank
-barely -> step 1c -> bareli -> step 2 -> bare
-barnes -> step 1a -> barne -> step 5a -> barn
+bare
+barn
 barrel
-beautiful -> step 3 -> beauti
+beauti
 begin
 behind
-believe -> step 5a -> believ
-believed -> step 1b -> believ
+believ
+believ
 bell
-belonged -> step 1b -> belong
-belting -> step 1b -> belt
-bes -> step 1a -> be
+belong
+belt
+be
 betwixt
-bills -> step 1a -> bill
+bill
 blame
-blazing -> step 1b -> blaz
-blotted -> step 1b -> blott
+blaz
+blott
 board
-body's -> step 1a -> body'
+body'
 boot-heel
-bothersome -> step 5a -> bothersom
+bothersom
 bought
-branches -> step 1a -> branche -> step 5a -> branch
-breaking -> step 1b -> break
+branch
+break
 breast
-breasts -> step 1a -> breast
+breast
 breath
-breathe -> step 5a -> breath
+breath
 bring
 broad
-broomsticks -> step 1a -> broomstick
-budge -> step 5a -> budg
-bulrushers -> step 1a -> bulrusher -> step 4 -> bulrush
-burglars -> step 1a -> burglar
-burglary -> step 1c -> burglari
-buried -> step 1b -> buri
+broomstick
+budg
+bulrush
+burglar
+burglari
+buri
 burnt
 bust
-busted -> step 1b -> bust
-calculating -> step 1b -> calculat
+bust
+calcul
 camp
 carcass
 care
-carriages -> step 1a -> carriage -> step 5a -> carriag
-carts -> step 1a -> cart
-cats -> step 1a -> cat
-certainly -> step 1c -> certainli
+carriag
+cart
+cat
+certainli
 chair
-change -> step 5a -> chang
+chang
 chap
-charged -> step 1b -> charg
-charging -> step 1b -> charg
+charg
+charg
 charm
-chased -> step 1b -> chas -> step 1a -> cha
-cheered -> step 1b -> cheer
-cheerful -> step 3 -> cheer
+chas
+cheer
+cheer
 chewing-gum
 children
 china
-clay -> step 1c -> clai
-clayey -> step 1c -> clayei
+clai
+clayei
 clean
-cleaned -> step 1b -> clean
+clean
 clear
 climb
 clock
@@ -569,253 +569,253 @@ close
 closet
 club
 clump
-cluttered -> step 1b -> clutter
-coming -> step 1b -> com
-commenced -> step 1b -> commenc
-company -> step 1c -> compani
-confidence -> step 4 -> confid
-consideration -> step 2 -> considerate -> step 4 -> consider -> step 4 -> consid
-considered -> step 1b -> consider -> step 4 -> consid
-considering -> step 1b -> consider -> step 4 -> consid
-cooked -> step 1b -> cook
-corked -> step 1b -> cork
+clutter
+com
+commenc
+compani
+confid
+consider
+consid
+consid
+cook
+cork
 counterfeit
-cramped -> step 1b -> cramp
+cramp
 crawl
-crawling -> step 1b -> crawl
-creeping -> step 1b -> creep
+crawl
+creep
 crept
 cry
-cry-baby -> step 1c -> cry-babi
-crying
+cry-babi
+cry
 cure
-curious -> step 1a -> curiou
-curse -> step 5a -> curs -> step 1a -> cur
+curiou
+curs
 dah
 damp
 dat
 daughter
 deacon
-deadly -> step 1c -> deadli
+deadli
 deal
 decent
 didn
-difference -> step 4 -> differ
-directly -> step 1c -> directli
+differ
+directli
 dismal
-disturbance -> step 4 -> disturb
+disturb
 doan
-dog-tired -> step 1b -> dog-tir
+dog-tir
 doll
 don
-doughnuts -> step 1a -> doughnut
-down-hearted -> step 1b -> down-heart
-dressed -> step 1b -> dress
-dropped -> step 1b -> dropp
+doughnut
+down-heart
+dress
+dropp
 drunk
-ducked -> step 1b -> duck
+duck
 dull
-ease -> step 5a -> eas -> step 1a -> ea
+eas
 easier
 eat
-edge -> step 5a -> edg
+edg
 ef
-elected -> step 1b -> elect
+elect
 eleven
-else -> step 5a -> els -> step 1a -> el
-em's -> step 1a -> em'
-emperor's -> step 1a -> emperor'
-enchantment -> step 4 -> enchant
+els
+em'
+emperor'
+enchant
 end
-ends -> step 1a -> end
-enemies -> step 1a -> enemi
-eyes -> step 1a -> eye -> step 5a -> ey -> step 1c -> ei
+end
+enemi
+ey
 fair
-families -> step 1a -> famili
+famili
 fat
 fault
-feeling -> step 1b -> feel
+feel
 feet
-fidgety -> step 1c -> fidgeti
-fifty -> step 1c -> fifti
+fidgeti
+fifti
 fill
-finding -> step 1b -> find
-fingers -> step 1a -> finger
+find
+finger
 fire
-fish-line -> step 5a -> fish-lin
+fish-lin
 fist
 fix
-flat-heads -> step 1a -> flat-head
-flipped -> step 1b -> flipp
+flat-head
+flipp
 float
-floating -> step 1b -> float
+float
 floor
 flyin
-folks -> step 1a -> folk
+folk
 follow
-fooling -> step 1b -> fool
-foolishness -> step 3 -> foolish
+fool
+foolish
 foot
-forty -> step 1c -> forti
+forti
 fourth
 free
 front
 full
 fum
-funeral -> step 4 -> funer
-funny -> step 1c -> funni
+funer
+funni
 fust
-gals -> step 1a -> gal
+gal
 gap
 ghost
-gifts -> step 1a -> gift
-gits -> step 1a -> git
+gift
+git
 glad
-goggles -> step 1a -> goggle -> step 5a -> goggl
-going-over -> step 4 -> going-ov
+goggl
+going-ov
 gold
 gone
 grand
 grave
-grease -> step 5a -> greas -> step 1a -> grea
-greased -> step 1b -> greas -> step 1a -> grea
-grieving -> step 1b -> griev
-grumble -> step 5a -> grumbl
-hacked -> step 1b -> hack
+greas
+greas
+griev
+grumbl
+hack
 half
-half-yearly -> step 1c -> half-yearli
+half-yearli
 hand
 happen
-hardly -> step 1c -> hardli
+hardli
 harp
 hash
-hated -> step 1b -> hat
-heads -> step 1a -> head
-hears -> step 1a -> hear
-heavy -> step 1c -> heavi
+hate
+head
+hear
+heavi
 held
-hiding -> step 1b -> hid
-high-toned -> step 1b -> high-ton
+hid
+high-ton
 highest
 highwaymen
-hillside -> step 5a -> hillsid
+hillsid
 hilltop
-hived -> step 1b -> hiv
+hiv
 hm
-hog-drivers -> step 1a -> hog-driver -> step 4 -> hog-driv
+hog-driv
 hold
-hookey -> step 1c -> hookei
+hookei
 hop
-horseshoe -> step 5a -> horsesho
-houses -> step 1a -> house -> step 5a -> hous -> step 1a -> hou
+horsesho
+hous
 hoverin
-hundreds -> step 1a -> hundred -> step 1b -> hundr
-hunted -> step 1b -> hunt
+hundr
+hunt
 hurt
 hymn-book
 ii
 iii
-including -> step 1b -> includ
+includ
 infant
-ingots -> step 1a -> ingot
+ingot
 injun
 instead
 invest
 irish
-itched -> step 1b -> itch
+itch
 iv
 jack
 jam
 jericho
-jim's -> step 1a -> jim'
-joy -> step 1c -> joi
-juice -> step 5a -> juic
-julery -> step 1c -> juleri
+jim'
+joi
+juic
+juleri
 kase
-keeping -> step 1b -> keep
-kinds -> step 1a -> kind
+keep
+kind
 knock
-knows -> step 1a -> know
+know
 lamb
-las -> step 1a -> la
+la
 lath
-leaned -> step 1b -> lean
+lean
 learn
-learned -> step 1b -> learn
-leaves -> step 1a -> leave -> step 5a -> leav
-legs -> step 1a -> leg
-letting -> step 1b -> lett
-licks -> step 1a -> lick
-lied -> step 1b -> li
-lightning -> step 1b -> lightn
-lights -> step 1a -> light
-likely -> step 1c -> likeli -> step 2 -> like
+learn
+leav
+leg
+lett
+lick
+li
+lightn
+light
+like
 line
 list
 listen
-listening -> step 1b -> listen
-loaded -> step 1b -> load
-loads -> step 1a -> load
+listen
+load
+load
 lock
 love
 low-down
-low-spirited -> step 1b -> low-spirit
+low-spirit
 ma
 magic
 magician
 maid
-making -> step 1b -> mak
-man's -> step 1a -> man'
-manage -> step 5a -> manag
-marked -> step 1b -> mark
+mak
+man'
+manag
+mark
 market
-marks -> step 1a -> mark
-masks -> step 1a -> mask
-mathematics -> step 1a -> mathematic -> step 4 -> mathemat
+mark
+mask
+mathemat
 meet
-mentioned -> step 1b -> mention
-merchants -> step 1a -> merchant
+mention
+merchant
 mess
-middling -> step 1b -> middl
+middl
 mine
-miserableness -> step 3 -> miserable -> step 4 -> miser
-mixed -> step 1b -> mix
-monstrous -> step 1a -> monstrou
+miser
+mix
+monstrou
 month
-months -> step 1a -> month
+month
 more'n
-mournful -> step 3 -> mourn
-mouthful -> step 3 -> mouth
-mouths -> step 1a -> mouth
+mourn
+mouth
+mouth
 move
 mr
-muddled -> step 1b -> muddl
-mules -> step 1a -> mule
-multiplication -> step 2 -> multiplicate -> step 3 -> multiplic -> step 4 -> multipl
+muddl
+mule
+multipl
 murder
-nailing -> step 1b -> nail
-nails -> step 1a -> nail
-named -> step 1b -> nam
-names -> step 1a -> name
+nail
+nail
+nam
+name
 narrow
 nation
-nearly -> step 1c -> nearli
-need -> step 1b -> ne
-news -> step 1a -> new
+nearli
+need
+new
 nohow
 none
 nose
-numskull
+numskul
 nuther
-odds -> step 1a -> odd
-offered -> step 1b -> offer
+odd
+offer
 oho-o
-ones -> step 1a -> one -> step 5a -> on
-opened -> step 1b -> open
-ordered -> step 1b -> order
-orleans -> step 1a -> orlean
-ornery -> step 1c -> orneri
-others -> step 1a -> other
+on
+open
+order
+orlean
+orneri
+other
 owl
 ox
 pack
@@ -823,123 +823,123 @@ paid
 parcel
 part
 particular
-parts -> step 1a -> part
+part
 pass
-passages -> step 1a -> passage -> step 5a -> passag
-passing -> step 1b -> pass
-pay -> step 1c -> pai
-pecking -> step 1b -> peck
+passag
+pass
+pai
+peck
 peg
 pencil
-per'aps -> step 1a -> per'ap
+per'ap
 perfect
 person
 picnic
 pie
-piled -> step 1b -> pil
+pil
 pin
 pipe
-pirate-books -> step 1a -> pirate-book
-play -> step 1c -> plai
-plenty -> step 1c -> plenti
-polite -> step 5a -> polit
+pirate-book
+plai
+plenti
+polit
 pork
 power
 powwow
-practice -> step 5a -> practic
-prayed -> step 1b -> pray -> step 1c -> prai
-prayers -> step 1a -> prayer
-praying -> step 1b -> pray -> step 1c -> prai
-pretended -> step 1b -> pretend
+practic
+prai
+prayer
+prai
+pretend
 primer-class
 profit
-property -> step 1c -> properti
+properti
 proud
-providences -> step 1a -> providence -> step 4 -> provid
-pulling -> step 1b -> pull
-puzzled -> step 1b -> puzzl
-quality -> step 1c -> qualiti
-quarry -> step 1c -> quarri
-questions -> step 1a -> question
+provid
+pull
+puzzl
+qualiti
+quarri
+question
 quiet
-quite -> step 5a -> quit
-quixote -> step 5a -> quixot
+quit
+quixot
 rag
-ragged -> step 1b -> ragg
-rags -> step 1a -> rag
-raspy -> step 1c -> raspi
+ragg
+rag
+raspi
 raw
-reached -> step 1b -> reach
+reach
 real
-really -> step 1c -> realli
-res -> step 1a -> re
-resigned -> step 1b -> resign
-respectable -> step 4 -> respect
+realli
+re
+resign
+respect
 road
-robbed -> step 1b -> robb
-robber-books -> step 1a -> robber-book
+robb
+robber-book
 robinson
-rolled -> step 1b -> roll
+roll
 root
-roots -> step 1a -> root
-rotted -> step 1b -> rott
+root
+rott
 rough
 roun
 rub
-rubbing -> step 1b -> rubb
-ruined -> step 1b -> ruin
+rubb
+ruin
 rule
 rung
-rushed -> step 1b -> rush
-rustled -> step 1b -> rustl
+rush
+rustl
 s'pose
-saddle-boils -> step 1a -> saddle-boil
+saddle-boil
 sail
 salt-cellar
 saphead
 sat
-satisfactory -> step 1c -> satisfactori
-satisfied -> step 1b -> satisfi
-saturday -> step 1c -> saturdai
+satisfactori
+satisfi
+saturdai
 saw
-saying -> step 1b -> say -> step 1c -> sai
+sai
 scar
-scattered -> step 1b -> scatter
+scatter
 scold
 scoop
 scour
-scoured -> step 1b -> scour
-scrambled -> step 1b -> scrambl
+scour
+scrambl
 scrape
-scrouched -> step 1b -> scrouch
+scrouch
 scrunch
 seat
-seeing -> step 1b -> see
+see
 sent
 servant
-setting -> step 1b -> sett
-settled -> step 1b -> settl
-shaky -> step 1c -> shaki
+sett
+settl
+shaki
 sheet
-shining -> step 1b -> shin
-shinning -> step 1b -> shinn
-shiny -> step 1c -> shini
-shivers -> step 1a -> shiver
+shin
+shinn
+shini
+shiver
 shook
 shoot
-shot-tower -> step 4 -> shot-tow
-shoulders -> step 1a -> shoulder
-shriveled -> step 1b -> shrivel
-shucks -> step 1a -> shuck
-signed -> step 1b -> sign
-since -> step 5a -> sinc
+shot-tow
+shoulder
+shrivel
+shuck
+sign
+sinc
 sing
 sister
-sivilize -> step 4 -> sivil
+sivil
 size
 skiff
-sleeping -> step 1b -> sleep
-sleepy -> step 1c -> sleepi
+sleep
+sleepi
 slid
 slide
 slim
@@ -954,133 +954,133 @@ snuffbox
 sober
 soft
 solid
-somewheres -> step 1a -> somewhere -> step 5a -> somewher -> step 4 -> somewh
+somewher
 son
-sorry -> step 1c -> sorri
+sorri
 spanish
-sparkling -> step 1b -> sparkl
+sparkl
 spell
 spelling-book
-spies -> step 1a -> spi
+spi
 spirit
-spiritual -> step 4 -> spiritu
+spiritu
 spite
 split
 spread
-square -> step 5a -> squar
-stages -> step 1a -> stage
-standing -> step 1b -> stand
+squar
+stage
+stand
 state
 stead
-stealing -> step 1b -> steal
+steal
 steep
 stiller
-stirred -> step 1b -> stirr
-stirring -> step 1b -> stirr
+stirr
+stirr
 stole
 stomach
-stooped -> step 1b -> stoop
-stooping -> step 1b -> stoop
+stoop
+stoop
 stop
-stopped -> step 1b -> stopp
-strange -> step 5a -> strang
+stopp
+strang
 stretch
-stretchers -> step 1a -> stretcher
+stretcher
 string
-studied -> step 1b -> studi
-stumped -> step 1b -> stump
+studi
+stump
 style
-sued -> step 1b -> su
+su
 sugar-hogshead
 sumf'n
 sumter
 sun-up
-sundays -> step 1a -> sunday -> step 1c -> sundai
-superintendent -> step 4 -> superintend
-surprised -> step 1b -> surpris -> step 1a -> surpri
-swaps -> step 1a -> swap
+sundai
+superintend
+surpris
+swap
 swear
-sweaty -> step 1c -> sweati
+sweati
 swore
-taking -> step 1b -> tak
+tak
 tall
 teacher
 tear
-tearing -> step 1b -> tear
-tears -> step 1a -> tear
+tear
+tear
 teeth
-tells -> step 1a -> tell
+tell
 ten
 that'll
 thatcher
-thatcher's -> step 1a -> thatcher'
+thatcher'
 thickest
-thirty-five -> step 4 -> thirty-f
+thirty-f
 thread
 throat
 throw
 thunder
 tie
-tied -> step 1b -> ti
+ti
 tight
-tiresome -> step 5a -> tiresom
-tolerable -> step 4 -> toler
-tom's -> step 1a -> tom'
-tommy -> step 1c -> tommi
+tiresom
+toler
+tom'
+tommi
 top
 touch
-towards -> step 1a -> toward
+toward
 tract
-trance -> step 5a -> tranc
-treasure -> step 5a -> treasur
+tranc
+treasur
 true
 tuck
 turnip-cart
-turnips -> step 1a -> turnip
+turnip
 twain
 twig
-twinkling -> step 1b -> twinkl
-uncomfortable -> step 4 -> uncomfort
+twinkl
+uncomfort
 underneath
 understand
 understood
-unhitched -> step 1b -> unhitch
-upwards -> step 1a -> upward
-victuals -> step 1a -> victual
+unhitch
+upward
+victual
 wait
-waited -> step 1b -> wait
-waked -> step 1b -> wak
+wait
+wak
 wall
 waltz
 watch
 watch-out
-watches -> step 1a -> watche -> step 5a -> watch
+watch
 weather
 week
 whale
 whar
-wherever -> step 4 -> wherev
+wherev
 whether
-whichever -> step 4 -> whichev
-whippowill -> step 5b -> whippowil
+whichev
+whippowil
 whisper
-whispered -> step 1b -> whisper
-who-whooing -> step 1b -> who-whoo
+whisper
+who-whoo
 will
-willing -> step 1b -> will
+will
 wind
-winds -> step 1a -> wind
+wind
 winn
 winter
 wish
-witched -> step 1b -> witch
+witch
 woman
 wonder
-wondering -> step 1b -> wonder
+wonder
 work
-worked -> step 1b -> work
-worried -> step 1b -> worri
-worry -> step 1c -> worri
+work
+worri
+worri
 worth
-yards -> step 1a -> yard
+yard
 yet
