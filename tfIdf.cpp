@@ -1,6 +1,7 @@
 #include <cstdio>
 #include <cstring>
 #include <map>
+#include <set>
 #include <string>
 #include <vector>
 #include <utility>
@@ -66,9 +67,9 @@ void _getTf(char * fr, char * fw) {
 	fclose(fout);
 }
 
-// 문서를 입력으로 받아서 각 단어들의 빈도수를 (단어,빈도수) 쌍으로
-// 저장한다.
-void getTf(string & doc) {
+// (단어,빈도수) 쌍으로 만든다.
+// tf를 계산한다.
+void getTf(string & doc, vector<pair<string,double>> & tf) {
 	int n = 0;
 	char s[maxs];
 	map<string,int> m;
@@ -80,7 +81,14 @@ void getTf(string & doc) {
 		n++;
 	}
 	fclose(fin);
-
+	for (auto a : m)
+		tf.push_back(make_pair(a.first, 1.0 * a.second / n));
+//	sort(tf.begin(), tf.end(), [](auto & l, auto & r) {
+	sort(tf.begin(), tf.end(), [](const pair<string,double> & l, const pair<string,double> & r) {
+		if (l.second < r.second) return true;
+		else if (l.second > r.second) return false;
+		return l.first < r.first;
+	});
 }
 
 void _getIdf(char * docs[], ...) {
@@ -115,23 +123,53 @@ void getIdx(vector<string> & docs) {
 	fclose(fout);
 }
 
+// 문서군을 입력으로 받아서 각 단어들에 대한 idf를 계산한다.
+void _getIdf(vector<string> & docs) {
+	int n = docs.size();
+	for (auto doc : docs) {
+		FILE * fin = fopen(doc.c_str(), "r");
+
+		fclose(fin);
+	}
+}
+
 // index.txt로부터 입력을 받아서 각 단어별로 idf를 계산 후 저장한다.
 void getIdf() {
 	FILE * fin = fopen("index.txt", "r");
-	
+
 	fclose(fin);
 }
 
+void getTfIdfSingle() {
+	int n = 0;
+	char s[maxs];
+	FILE * fin = fopen("stemmed.txt", "r");
+	map<string,int> m;
+	for (;;) {
+		memset(s, 0, sizeof s);
+		if (fscanf(fin, "%s", s) == EOF) break;
+		m[string(s)]++;
+		n++;
+	}
+	fclose(fin);
+	vector<pair<string,double>> tf;
+	for (auto a : m)
+		tf.push_back(make_pair(a.first, 1.0 * a.second / n));
+	sort(tf.begin(), tf.end(), [](const pair<string,double> & l, const pair<string,double> & r) {
+		if (l.second > r.second) return true;
+		else if (l.second < r.second) return false;
+		return l.first < r.first;
+	});
+	for (auto a : tf)
+		printf("%-10s %-10.f\n", a.first.c_str(), a.second);
+	FILE * fout = fopen("tfIdfSingle.txt", "w");
+	for (auto a : tf)
+		fprintf(fout, "%s %f\n", a.first.c_str(), a.second);
+	fclose(fout);
+}
+
 int main() {
-//	_run();
-	/*
-	vector<pair<int,string>> tb2;
-	for (auto e : tb)
-		tb2.push_back(make_pair(e.second, e.first));
-	sort(tb2.rbegin(), tb2.rend());
-	for (auto e : tb2)
-		printf("%s %d\n", e.second.c_str(), e.first);
+	getTfIdfSingle();
 	puts("successfully completed!");
-	*/
 	return 0;
 }

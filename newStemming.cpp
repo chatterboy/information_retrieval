@@ -213,6 +213,22 @@ int stemming(stemmer * z) {
 	return z->k;
 }
 
+void run() {
+	char s[256];
+	stemmer z;
+	fin = fopen("after_removing_stopwords.txt", "r");
+	fout = fopen("stemmed.txt", "w");
+	for (;;) {
+		memset(s, 0, sizeof s);
+		if (fscanf(fin, "%s %*d\n", s) == EOF) break;
+		z = stemmer(s);
+		s[stemming(&z)] = '\0';
+		fprintf(fout, "%s\n", s);
+	}
+	fclose(fin);
+	fclose(fout);
+}
+
 void _run() {
 	char s[256];
 	stemmer z;
@@ -271,7 +287,7 @@ void _test() {
 }
 
 int main() {
-	_run();
+	run();
 	puts("successfully completed!");
 	return 0;
 }
