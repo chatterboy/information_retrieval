@@ -16,7 +16,7 @@ void getTfIdfSingle() {
 	int n = 0; // the total number of the words in a single file.
 	char s[maxs]; // just buffer for storing a string.
 	FILE * fin = fopen("stemmed.txt", "r");
-	// we need (string, int) pairings that is mapped (a word, frequency of a word).
+	// we need (string, int) pairings that are mapped (a word, frequency of a word).
 	// this structure makes calculation for tf easy.
 	map<string,int> m;
 	// now, we get stemmed words in a single file.
@@ -27,7 +27,7 @@ void getTfIdfSingle() {
 		n++; // count the total number of the words.
 	}
 	fclose(fin);
-	// we need (string, double) pairings that is mapped (a word, tf for a word).
+	// we need (string, double) pairings that are mapped (a word, tf for a word).
 	// this structure makes sorting for specific method easy.
 	vector<pair<string,double>> tf;
 	for (auto a : m)
