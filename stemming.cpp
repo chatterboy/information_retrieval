@@ -1,250 +1,314 @@
-// Porter Stemming Algorithm
-// ref @ http://snowball.tartarus.org/algorithms/porter/stemmer.html
-#define TEST
 #include <cstdio>
 #include <cstring>
-#include <cassert>
-#include <iostream>
 #include <string>
-#include <deque>
 #include <vector>
-#include <algorithm>
 using namespace std;
-#define BUFFER_SIZE 128
-FILE *fin;
-FILE *fout;
-const char* rules[] = {
-	"step 1a", "step 1b", "step 1c", "step 2",
-	"step 3", "step 4", "step 5a", "step 5b"
+
+FILE * fin;
+FILE * fout;
+
+// ok
+// s => [0,k)
+// [0,j), [j,k)
+struct stemmer {
+	char * s;
+	int j, k;
+	stemmer() {}
+	stemmer(char * s) : s(s) {
+		k = strlen(s);
+		j = k;
+	}
 };
-char buf[BUFFER_SIZE];
-int readLineFile() {
-	memset(buf, 0, sizeof buf);
-	if (fgets(buf, sizeof buf, fin) != NULL)
-		return 0;
+
+int cons(stemmer * z, int i) {
+	switch (z->s[i]) {
+		case 'a': case 'e': case 'i': case 'o': case 'u': return 0;
+		case 'y' : return (i == 0) ? 1 : !cons(z, i - 1);
+		default: return 1;
+	}
+}
+
+int v(stemmer * z) {
+	int i;
+	int j = z->j;
+	for (i = 0; i < j; i++)
+		if (!cons(z, i))
+			return 1;
+	return 0;
+}
+
+// cvc()
+// if i-2, i-1, i has the form consonant, vowel, consonant
+// this function returns true.
+int cvc(stemmer * z, int i) {
+	char ch;
+	if (i >= 2 && cons(z, i) && !cons(z, i-1) && cons(z, i-2)) {
+		ch = z->s[i];
+		if (ch != 'w' && ch != 'x' && ch != 'y')
+			return 1;
+	}
+	return 0;
+}
+
+// d() is 1 <=> i-1, i contains a double consonant.
+// d() is 0 <=> otherwise.
+int d(stemmer * z, int i) {
+	char * s = z->s;
+	if (i >= 1)
+		if (s[i-1] == s[i])
+			return 1;
+	return 0;
+}
+
+// we count the number of a consecutive consonants in string
+int m(stemmer * z) {
+	int n = 0;
+	int i = 0;
+	int j = z->j;
+	for (; i < j && cons(z, i); i++);
+	if (i >= j) return n;
+	for (;;) {
+		for (; i < j && !cons(z, i); i++);
+		if (i >= j) return n;
+		for (; i < j && cons(z, i); i++);
+		n++;
+		if (i >= j) return n;
+	}
+}
+
+// setto() 
+void setto(stemmer * z, char * s) {
+	int i;
+	int length = strlen(s);
+	int j = z->j;
+	for (i = 0; i < length; i++)
+		z->s[j + i] = s[i];
+	z->k = j + length;
+}
+
+// ok
+// string z->s ends with the string s.
+// ends(z, "ing")
+int ends(stemmer * z, char * s) {
+	int length = strlen(s);
+	int k = z->k;
+	char * b = z->s;
+	if (length > k) return 0;
+	if (strncmp(b + k - length, s, length)) return 0;
+	z->j = k - length;
 	return 1;
 }
-void removeNewLine() {
-	int i;
-	i = strlen(buf) - 1;
-	while (i >= 0 && buf[i] == '\n')
-		buf[i--] = '\0';
+
+int r(stemmer * z, char * s) {
+	if (m(z) > 0)
+		setto(z, s);
+	return 0;
 }
-void removeFrequency() {
-	char _buf[BUFFER_SIZE];
-	strncpy(_buf, buf, strlen(buf));
-	_buf[strlen(buf)] = '\0';
-	memset(buf, 0, sizeof buf);
-	sscanf(_buf, "%s %*d", buf);
-}
-bool isconstant(char ch) {
-	static char constant[] = {'a', 'e', 'i', 'o', 'u'};
-	int i;
-	for (i = 0; i < 5; i++)
-		if (ch == constant[i])
-			return false;
-	return true;
-}
-int m(string s) {
-	int i;
-	deque<char> form;
-	if (s.empty()) return 0;
-	for (i = 0; i < s.size(); i++) {
-		if (!isconstant(s[i]) || (s[i] == 'y' && i+1 < s.size() && isconstant(s[i+1])))
-			form.push_back('v');
-		else
-			form.push_back('c');
+
+void step1ab(stemmer * z) {
+	char ch;
+	if (z->s[z->k - 1] == 's') {
+		if (ends(z, "sses") || ends(z, "ies")) z->k -= 2;
+		else if (z->s[z->k - 2] != 's') z->k--;
 	}
-	form.erase(unique(form.begin(), form.end()), form.end());
-	if (form.front() == 'c') form.pop_front();
-	if (form.back() == 'v') form.pop_back();
-	return (int)form.size() / 2;
-}
-bool o(string s) {
-	int i;
-	deque<char> form;
-	if (s.empty()) return false;
-	for (i = 0; i < s.size(); i++) {
-		if (!isconstant(s[i]) || (s[i] == 'y' && i+1 < s.size() && isconstant(s[i+1])))
-			form.push_back('v');
-		else
-			form.push_back('c');
+	if (ends(z, "eed")) {
+		if (m(z) > 0)
+			z->k--;
+	} else if ((ends(z, "ed") || ends(z, "ing")) && v(z)) {
+		z->k = z->j;
+		if (ends(z, "at"))
+			setto(z, "ate");
+		else if (ends(z, "bl"))
+			setto(z, "ble");
+		else if (ends(z, "iz"))
+			setto(z, "ize");
+		else if (d(z, z->k)) {
+			z->k--;
+			ch = z->s[z->k];
+			if (ch == 'l' || ch == 's' || ch == 'z')
+				z->k++;
+		} else if (m(z) == 1 && cvc(z, z->k))
+			setto(z, "e");
 	}
-//	form.erase(unique(form.begin(), form.end()), form.end());
-//	if (form.front() == 'c') form.pop_front();
-//	if (form.back() == 'v') form.pop_back();
-	if (form.size() >= 3 && form[form.size()-3] == 'c' && form[form.size()-2] == 'v' && form[form.size()-1] == 'c')
-		if (!(form[form.size()-1] == 'w' || form[form.size()-1] == 'x' || form[form.size()-1] == 'y'))
-			return true;
-	return false;
 }
-bool v(string s) {
-	int i;
-	for (i = 0; i < s.size(); i++)
-		if (!isconstant(s[i]))
-			return true;
-	return false;
+
+void step1c(stemmer * z) {
+	if (ends(z, "y") && v(z))
+		z->s[z->k - 1] = 'i';
 }
-int step1a(string &s) {
-	static int len[] = {4, 3, 2, 1};
-	static string sf[] = {"sses", "ies", "ss", "s"};
-	static string sf2[] = {"ss", "i", "ss", ""};
+
+void step2(stemmer * z) {
+	static const int n = 20;
+	static char * a[n] = {
+		"ational", "tional", "enci", "anci", "izer",
+		"abli", "alli", "entli", "eli", "ousli",
+		"ization", "ation", "ator", "alism", "iveness",
+		"fulness", "ousness", "aliti", "iviti", "biliti"
+	};
+	static char * b[n] = {
+		"ate", "tion", "ence", "ance", "ize",
+		"able", "al", "ent", "e", "ous",
+		"ize", "ate", "ate", "al", "ive",
+		"ful", "ous", "al", "ive", "ble"
+	};
 	int i;
-	for (i = 0; i < 4; i++)
-		if (s.size() >= len[i] && s.substr(s.size()-len[i], s.size()) == sf[i]) {
-			s = s.substr(0, s.size()-len[i]) + sf2[i];
-			if (sf[i] == "ss")
-				return 0;
-			return i + 1;
+	for (i = 0; i < n; i++)
+		if (ends(z, a[i])) {
+			r(z, b[i]);
+			break;
 		}
-	return 0;
 }
-int step1b(string &s) {
-	if (s.size() >= 3 && s.substr(s.size()-3, s.size()) == "eed" && m(s.substr(0, s.size()-3)) > 0) {
-		s = s.substr(0, s.size()-3) + "ee";
-		return 1;
-	} else if (s.size() >= 2 && s.substr(s.size()-2, s.size()) == "ed" && v(s.substr(0, s.size()-2))) {
-		s = s.substr(0, s.size()-2);
-		return 2;
-	} else if (s.size() >= 3 && s.substr(s.size()-3, s.size()) == "ing" && v(s.substr(0, s.size()-3))) {
-		s = s.substr(0, s.size()-3);
-		return 3;
+
+void step3(stemmer * z) {
+	static const int n = 7;
+	static char * a[n] = {
+		"icate", "ative", "alize", "iciti", 
+		"ical", "ful", "ness"
+	};
+	static char * b[n] = {
+		"ic", "", "al", "ic",
+		"ic", "", ""
+	};
+	int i;
+	for (i = 0; i < n; i++)
+		if (ends(z, a[i])) {
+			r(z, b[i]);
+			break;
+		}
+}
+
+void step4(stemmer * z) {
+	static const int n = 19;
+	static char * a[n] = {
+		"al", "ance", "ence", "er", "ic",
+		"able", "ible", "ant", "ement", "ment",
+		"ent", "ion", "ou", "ism", "ate",
+		"iti", "ous", "ive", "ize"
+	};
+	int i;
+	for (i = 0; i < n; i++)
+		if (ends(z, a[i]) && m(z) > 1) {
+			z->k = z->j;
+			break;
+		}
+}
+
+void step5(stemmer * z) {
+	char * s = z->s;
+	int k = z->k;
+	z->j = k;
+	if (s[k - 1] == 'e')
+		if (m(z) > 1 || (m(z) == 1 && !cvc(z, k - 2)))
+			z->k--;
+	if (s[k - 1] == 'l' && d(z, k - 1) && m(z) > 1)
+		z->k--;
+}
+
+int stemming(stemmer * z) {
+	if (z->k > 1) {
+		step1ab(z);
+		step1c(z);
+		step2(z);
+		step3(z);
+		step4(z);
+		step5(z);
 	}
-	return 0;
+	return z->k;
 }
-int step1c(string &s) {
- 	if (s.size() >= 1 && s.substr(s.size()-1, s.size()) == "y" && v(s.substr(0, s.size()-1))) {
- 		s = s.substr(0, s.size()-1) + "i";
- 		return 1;
- 	}
- 	return 0;
-}
-int step2(string &s) {
-	static int len[] = {7, 6, 4, 4, 4,
-				 		4, 4, 5, 3, 5,
-				 		7, 5, 4, 5, 7,
-				 		7, 7, 5, 5, 6};
-	static string sf[] = {	"ational", "tional", "enci", "anci", "izer",
-							"abli", "alli", "entli", "eli", "ousli",
-							"ization", "ation", "ator", "alism", "iveness",
-							"fulness", "ousness", "aliti", "iviti", "biliti"};
-	static string sf2[] = {	"ate", "tion", "ence", "ance", "ize",
-							"able", "al", "ent", "e", "ous",
-							"ize", "ate", "ate", "al", "ive",
-							"ful", "ous", "al", "ive", "ble"};
-	int i;
-	for (i = 0; i < 20; i++)
-		if (s.size() >= len[i] && s.substr(s.size()-len[i], s.size()) == sf[i] && m(s.substr(0, s.size()-len[i])) > 0) {
-			s = s.substr(0, s.size()-len[i]) + sf2[i];
-			return i + 1;
+
+static const vector<string> fileName = {
+	"almond.txt", "apple.txt", "banana.txt", "bmw.txt", "car.txt",
+	"computer.txt", "dog.txt", "dragon fruit.txt", "durian.txt", "ferrari.txt",
+	"food.txt", "football.txt", "ford.txt", "google.txt", "grape.txt",
+	"guava.txt", "horse.txt", "internet.txt", "kiwifruit.txt", "korean melon.txt",
+	"mango.txt", "mangosteen.txt", "maple.txt", "michael jackson.txt", "movie.txt",
+	"music.txt", "musician.txt", "naver.txt", "papaya.txt", "pear.txt",
+	"pine.txt", "pineapple.txt", "rabbit.txt", "romantic music.txt", "samsung.txt",
+	"sausage.txt", "strawberry.txt", "tangerine.txt", "tomato.txt", "tree.txt",
+	"walnut.txt", "watermelon.txt", "yahoo.txt"
+};
+
+void run() {
+	char s[256];
+	stemmer z;
+	int n = fileName.size();
+	for (int i = 0; i < n; ++i) {
+		string a = "";
+		string b = "";
+		a += "stopword\\" + fileName[i];
+		b += "stemmed\\" + fileName[i];
+		fin = fopen(a.c_str(), "r");
+		fout = fopen(b.c_str(), "w");
+		for (;;) {
+			memset(s, 0, sizeof s);
+			if (fscanf(fin, "%s %*d\n", s) == EOF) break;
+			z = stemmer(s);
+			s[stemming(&z)] = '\0';
+			fprintf(fout, "%s\n", s);
 		}
-	return 0;
+		fclose(fin);
+		fclose(fout);
+	}
 }
-int step3(string &s) {
-	static int len[] = {5, 5, 5, 5, 4, 3, 4};
-	static string sf[] = {"icate", "ative", "alize", "iciti", "ical", "ful", "ness"};
-	static string sf2[] = {"ic", "", "al", "ic", "ic", "", ""};
-	int i;
-	for (i = 0; i < 7; i++)
-		if (s.size() >= len[i] && s.substr(s.size()-len[i], s.size()) == sf[i] && m(s.substr(0, s.size()-len[i])) > 0) {
-			s = s.substr(0, s.size()-len[i]) + sf2[i];
-			return i + 1;
-		}
-	return 0;
-}
-int step4(string &s) {
-	static int len[] = {2, 4, 4, 2, 2,
-				 		4, 4, 3, 5, 4,
-				 		3, 3, 2, 3, 3,
-				 		3, 3, 3, 3};
-	static string sf[] = {	"al", "ance", "ence", "er", "ic",
-							"able", "ible", "ant", "ement", "ment",
-							"ent", "ion", "ou", "ism", "ate",
-							"iti", "ous", "ive", "ize"};
-	int i;
-	for (i = 0; i < 19; i++)
-		if (s.size() >= len[i] && s.substr(s.size()-len[i], s.size()) == sf[i] && m(s.substr(0, s.size()-len[i])) > 1) {
-			if (sf[i] != "ion") {
-				s = s.substr(0, s.size()-len[i]);
-				return i + 1;
-			}
-			else {
-				if (s.substr(0, s.size()-len[i]).back() == 's' || s.substr(0, s.size()-len[i]).back() == 't') {
-					s = s.substr(0, s.size()-len[i]);
-					return i + 1;
-				}
-			}
-		}
-	return 0;
-}
-int step5a(string &s) {
-	int i;
-	if (s.size() >= 1 && s.back() == 'e')
-		for (i = 0; i < 2; i++) {
-			if (m(s.substr(0, s.size()-1)) > 1) {
-				printf("m > 1 : %s -> ", s.c_str());
-				s = s.substr(0, s.size()-1);
-				printf("%s\n", s.c_str());
-				return i + 1;
-			} else if (m(s.substr(0, s.size()-1)) == 1 && !o(s.substr(0, s.size()-1))) {
-				printf("m == 1 : %s -> ", s.c_str());
-				s = s.substr(0, s.size()-1);
-				printf("%s\n", s.c_str());
-				return i + 1;
-			}
-		}
-	return 0;
-}
-int step5b(string &s) {
-	int i;
-	if (s.size() >= 2)
-		if (m(s.substr(0, s.size()-2)) > 1 && s.back() == 'l' && s.back() == s[s.size()-2]) {
-			s = s.substr(0, s.size()-1);
-			return 1;
-		}
-	return 0;			
-}
-int main() {
-	bool changed;
+
+void _run() {
+	char s[256];
+	stemmer z;
 	fin = fopen("after_removing_stopwords.txt", "r");
-	fout = fopen("after_applying_stemming.txt", "w");
-	while (!readLineFile()) {
-		removeNewLine();
-		removeFrequency();
-		string w(buf);
-		string ww(buf);
-		fprintf(fout, "%s", w.c_str());
-		changed = true;
-		while (changed) {
-			changed = false;
-			if (step1a(ww) > 0) {
-				changed = true;
-				fprintf(fout, " -> step 1a -> %s", ww.c_str());
-			} else if (step1b(ww) > 0) {
-				changed = true;
-				fprintf(fout, " -> step 1b -> %s", ww.c_str());
-			} else if (step1c(ww) > 0) {
-				changed = true;
-				fprintf(fout, " -> step 1c -> %s", ww.c_str());
-			} else if (step2(ww) > 0) {
-				changed = true;
-				fprintf(fout, " -> step 2 -> %s", ww.c_str());
-			} else if (step3(ww) > 0) {
-				changed = true;
-				fprintf(fout, " -> step 3 -> %s", ww.c_str());
-			} else if (step4(ww) > 0) {
-				changed = true;
-				fprintf(fout, " -> step 4 -> %s", ww.c_str());
-			} else if (step5a(ww) > 0) {
-				changed = true;
-				fprintf(fout, " -> step 5a -> %s", ww.c_str());
-			} else if (step5b(ww) > 0) {
-				changed = true;
-				fprintf(fout, " -> step 5b -> %s", ww.c_str());
-			}
-		}
-		fprintf(fout, "\n");
+	fout = fopen("stemmed.txt", "w");
+	for (;;) {
+		memset(s, 0, sizeof s);
+		if (fscanf(fin, "%s %*d\n", s) == EOF) break;
+		z = stemmer(s);
+		s[stemming(&z)] = '\0';
+		fprintf(fout, "%s\n", s);
 	}
 	fclose(fin);
 	fclose(fout);
+}
+
+// this function tests the m() of a string is correct.
+// input the data from input.txt
+// output the data to output.txt
+void test() {
+	char s[101];
+	stemmer z;
+	for (;;) {
+		memset(s, 0, sizeof s);
+		if (fscanf(fin, "%s", s) == EOF) break;
+		z = stemmer(s);
+		fprintf(fout, "%-10s %2d\n", z.s, m(&z));
+	}
+	fclose(fin);
+}
+
+// this function tests the setto()
+void test2() {
+	char s[100] = "crack";
+	stemmer z(s);
+	printf("%s %d\n", z.s, z.k);
+	z.j--;
+	setto(&z, "df");
+	printf("%s %d\n", z.s, z.k);
+}
+
+void _test() {
+	char s[256], s2[256];
+	FILE * fin2 = fopen("input.txt", "r");
+	fin = fopen("after_applying_stemming.txt", "r");
+	for (;;) {
+		memset(s, 0, sizeof s);
+		memset(s2, 0, sizeof s2);
+		if (fscanf(fin2, "%s", s) == EOF || fscanf(fin, "%s", s2) == EOF) break;
+		if (strcmp(s, s2))
+			printf("%s %s\n", s, s2);
+	}
+	fclose(fin);
+	fclose(fin2);
+}
+
+int main() {
+	run();
+	puts("successfully completed!");
+	return 0;
 }

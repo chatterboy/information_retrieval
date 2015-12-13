@@ -20,9 +20,13 @@ char buf[BUFFER_SIZE]; // 문자열을 저장하기 위한 버퍼.
 map<string,int> wtb;
 set<string> swl;
 
-void init_read_file(const char* fname) {
+void _init_read_file(const char* fname) {
 	// 읽기 모드로 파일을 연다.
 	fin = fopen(fname, "r");
+}
+
+void init_read_file(string & fname) {
+	fin = fopen(fname.c_str(), "r");
 }
 
 void free_read_file() {
@@ -81,7 +85,8 @@ void get_words_line() {
 				}
 			if (!flag) {
 				// 만들어진 단어 w는 소문자로 변환 후 테이블에 빈도수와 같이 저장한다.
-				if (!w.empty()) {
+				// 단어 크기는 3이상이여어야 한다.
+				if (!w.empty() && w.size() > 2) {
 					change_to_lower(w);
 					wtb[w]++;
 				}
@@ -112,10 +117,19 @@ void print_sorted_words() {
 		printf("%s %d\n", e.second.c_str(), e.first);
 }
 
-void print_sorted_words_file(const char* fname) {
+void _print_sorted_words_file(const char* fname) {
 	vector<pair<int,string>> v;
 	get_sorted_words(v);
 	fout = fopen(fname, "w");
+	for (auto e : v)
+		fprintf(fout, "%s %d\n", e.second.c_str(), e.first);
+	fclose(fout);
+}
+
+void print_sorted_words_file(string & fname) {
+	vector<pair<int,string>> v;
+	get_sorted_words(v);
+	fout = fopen(fname.c_str(), "w");
 	for (auto e : v)
 		fprintf(fout, "%s %d\n", e.second.c_str(), e.first);
 	fclose(fout);
@@ -131,31 +145,44 @@ void remove_stopwords_wtb() {
 	}
 }
 
+static const vector<string> fileName = {
+	"almond.txt", "apple.txt", "banana.txt", "bmw.txt", "car.txt",
+	"computer.txt", "dog.txt", "dragon fruit.txt", "durian.txt", "ferrari.txt",
+	"food.txt", "football.txt", "ford.txt", "google.txt", "grape.txt",
+	"guava.txt", "horse.txt", "internet.txt", "kiwifruit.txt", "korean melon.txt",
+	"mango.txt", "mangosteen.txt", "maple.txt", "michael jackson.txt", "movie.txt",
+	"music.txt", "musician.txt", "naver.txt", "papaya.txt", "pear.txt",
+	"pine.txt", "pineapple.txt", "rabbit.txt", "romantic music.txt", "samsung.txt",
+	"sausage.txt", "strawberry.txt", "tangerine.txt", "tomato.txt", "tree.txt",
+	"walnut.txt", "watermelon.txt", "yahoo.txt"
+};
+
 // 주어진 텍스트 파일을 스탑워드 리스트 파일을 기반으로 분석하여
 // 텍스트 파일의 단어 빈도 수를 기준으로 정렬(before_removing_stopwords.txt)
 // 스탑워드를 제거한 후 남은 단어 빈도 수를 기준으로 정렬(after_removing_stopwords.txt)
 // 결과를 확인할 수 있고 두 경우의 단어들의 수(compare_no_words.txt)를 비교할 수 있다.
 int main() {
-	init_read_file("Adventures_of_Huckleberry_Finn.txt");
-	// 파일로부터 한 줄씩 읽어와서 단어 테이블을 생성한다.
-	while (!read_line_file())
-		get_words_line();
-	free_read_file();
-
-	init_read_file("default_stopwords_list.txt");
+	_init_read_file("default_stopwords_list.txt");
 	get_stopwords_list_file();
 	free_read_file();
 
-	int before_sz = wtb.size();
-	print_sorted_words_file("before_removing_stopwords.txt");
+	int n = fileName.size();
+	for (int i = 0; i < n; ++i) {
+		string s = "";
+		s += "dataset\\" + fileName[i];
 
-	remove_stopwords_wtb();
+		init_read_file(s);
+		while (!read_line_file())
+			get_words_line();
+		free_read_file();
 
-	int after_sz = wtb.size();
-	print_sorted_words_file("after_removing_stopwords.txt");
+		remove_stopwords_wtb();
 
-	fout = fopen("compare_no_words.txt", "w");
-	fprintf(fout, "number of words before removing stopwords: %d\n", before_sz);
-	fprintf(fout, "number of words after removing stopwords: %d", after_sz);
-	fclose(fout);
+		s = "";
+		s += "stopword\\" + fileName[i];
+
+		print_sorted_words_file(s);
+	}
+
+	puts("successfully completed!");
 }
