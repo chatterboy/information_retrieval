@@ -107,27 +107,30 @@ void getTfIdf() {
 	int n = fileName.size();
 	vector<map<string,int>> v(n);
 	vector<map<string, pair<double, double>>> res(n);
+//	n = 1;
 	for (int i = 0; i < n; ++i) {
 		int k = 0;
 		string fr = "";
 		fr += "stemmed\\" + fileName[i];
 		FILE * fin = fopen(fr.c_str(), "r");
 		for (;;) {
+			int fre;
 			memset(s, 0, sizeof s);
-			if (fscanf(fin, "%s\n", s) == EOF) break;
-			v[i][string(s)]++;
-			k++;
+			if (fscanf(fin, "%s %d\n", s, &fre) == EOF) break;
+			v[i][string(s)] += fre;
+			k += fre;
 		}
 		fclose(fin);
 
 		// tf
 		for (auto e : v[i]) res[i][e.first].first = 1.0 * v[i][e.first] / k;
 	}
-	
+
 	for (int i = 0; i < n; ++i) { // idf
 		for (auto m : v[i]) {
 			int ndocs = 0;
-			for (int j = 0; j < n; ++j) if (v[j][m.first]) { ndocs++; break; }
+			for (int j = 0; j < n; ++j) if (v[j].find(m.first) != v[j].end()) ndocs++;
+
 			res[i][m.first].second = log(1.0 * n / ndocs);
 		}
 	}

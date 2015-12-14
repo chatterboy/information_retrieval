@@ -229,6 +229,7 @@ static const vector<string> fileName = {
 };
 
 void run() {
+	int k;
 	char s[256];
 	stemmer z;
 	int n = fileName.size();
@@ -241,10 +242,10 @@ void run() {
 		fout = fopen(b.c_str(), "w");
 		for (;;) {
 			memset(s, 0, sizeof s);
-			if (fscanf(fin, "%s %*d\n", s) == EOF) break;
+			if (fscanf(fin, "%s %d\n", s, &k) == EOF) break;
 			z = stemmer(s);
 			s[stemming(&z)] = '\0';
-			fprintf(fout, "%s\n", s);
+			fprintf(fout, "%s %d\n", s, k);
 		}
 		fclose(fin);
 		fclose(fout);

@@ -1,480 +1,480 @@
-almond
-almond
-fruit
-seed
-appl
-tree
-wild
-appl
-domest
-found
-gener
-grown
-shell
-also
-call
-can
-first
-known
-mani
-pink
-produc
-speci
-tree
-ancestor
-cultiv
-decidu
-earli
-eat
-european
-five
-flower
-hull
-leav
-long
-malu
-mediterranean
-nativ
-nut
-on
-product
-skin
-sweet
-white
-although
-amygdalin
-amygdalu
-archaeolog
-asia
-autumn
-bear
-best
-bitter
-cultivar
-cultiv
-cyanid
-deadli
-diamet
-drupe
-east
-edibl
-endocarp
-especi
-europ
-even
-far
-flesh
-form
-genu
-graft
-green
-grow
-hard
-human
-india
-infloresc
-insid
-larger
-levant
-littl
-market
-matur
-middl
-north
-number
-outer
-pakistan
-pale
-part
-part
-peach
-prunu
-rang
-raw
-region
-reveal
-rootstock
-select
-serrat
-shell
-spring
-state
-third
-though
-two
-type
-type
-unit
-varieti
-variou
-wide
-world
-worldwid
-year
-year
-yellow
-abil
-absenc
-acid
-afghanistan
-africa
-ag
-aim
-allergi
-almost
-along
-altern
-america
-ancient
-anoth
-appar
-appear
-appear
-argu
-armenia
-arrang
-attract
-attribut
-azerbaijan
-bacteri
-becom
-becom
-begin
-beginn
-believ
-benefici
-blanch
-bloom
-blossom
-botan
-botan
-branch
-break
-bred
-bronz
-brought
-brown
-budd
-bud
-burgh
-california
-caus
-central
-characterist
-cherri
-chew
-chill
-china
-christian
-cider
-classifi
-climat
-climat
-coat
-colonist
-commerci
-common
-commonli
-consist
-consum
-contain
-control
-control
-cook
-corrug
-countri
-cover
-cover
-creat
-crop
-crush
-cultiv
-cultur
-cur
-cutt
-cyme
-dark
-decod
-densiti
-desir
-dessert
-determin
-develop
-diamond
-differ
-diseas
-distinguish
-domestica
-domest
-dormanc
-downi
-dozen
-drink
-dry
-due
-earlier
-earliest
-eastward
-eaten
-econom
-ect
-egypt
-epicuticular
-estic
-exampl
-exist
-expos
-exterior
-fact
-fade
-famili
-farmer
-fatal
-fenzliana
-fleshi
-flower
-flower
-follow
-food
-form
-fresh
-fritsch
-fruit'
-full
-fungal
-garbag
-garden
-genet
-genom
-germani
-glycosid
-gradual
-graft
-greek
-green-color
-grei
-grey-green
-grow
-grower
-grower
-grow
-growth
-half
-handl
-health
-heap
-height
-hopf
-hot
-hour
-howev
-i.
-iamet
-iceland
-ild
-import
-inch
-includ
-indu
-ing
-injuri
-instead
-introduct
-iran
-itali
-jar
-jordan
-juic
-kernel
-king
-ladizinski
-larg
-late
-later
-layer
-leatheri
-lend
-like
-like
-lipski
-lmond
-mak
-margin
-margin
-mark
-mai
-mean
-measur
-mechan
-member
-method
-mild
-million
-month
-must
-mutant
-mutat
-mysteri
-mytholog
-name
-nic
-non-organ
-nors
-northern
-northernmost
-ntention
-numeria
-occasion
-often
-ogen
-onto
-open
-optim
-orchard
-origin
-oung
-outsid
-oval
-pair
-partli
-pest
-petal
-petal
-petiol
-pit
-plant
-plant
-plum
-poland
-pomac
-possibli
-prefer
-prefer
-prepar
-present
-probabl
-problem
-produc
-produc
-produc
-prone
-propag
-propag
-protect
-protein
-prussic
-purplish
-rais
-reach
-readili
-recent
-red
-refer
-religi
-remain
-remov
-remov
-report
-requir
-research
-result
-result
-reticul
-ripe
-river
-root
-rose
-rough
-royal
-russet
-russett
-second
-second-lead
-seedcoat
-select
-select
-shape
-shell
-shoot
-shore
-sieversii
-signific
-simpl
-simultan
-singli
-sist
-site
-six
-size
-size
-slightli
-small
-soften
-sold
-south
-southern
-spite
-spread
-spur
-stand
-still
-subgenera
-subgenu
-sucker
-suggest
-summer
-summer
-sunlight
-surround
-taken
-tall
-tast
-taxon
-temperatur
-term
-thick
-thought
-thousand
-thu
-time
-ting
-todai
-tomb
-ton
-total.th
-toxic
-tradit
-tral
-transform
-transport
-treat
-tri-color
-trimm
-true
-trunk
-turkei
-tutankhamun'
-twig
-unclear
-undersid
-unintention
-unshel
-upon
-us
-us
-valu
-warm
-water
-wax
-well-known
-western
-wet
-wholli
-wide
-winter
-within
-wny
-woodi
-xocarp
-yellowish-whit
-zohari
+almond 12
+almond 12
+fruit 12
+seed 10
+appl 9
+tree 9
+wild 9
+appl 7
+domest 7
+found 6
+gener 6
+grown 5
+shell 5
+also 4
+call 4
+can 4
+first 4
+known 4
+mani 4
+pink 4
+produc 4
+speci 4
+tree 4
+ancestor 3
+cultiv 3
+decidu 3
+earli 3
+eat 3
+european 3
+five 3
+flower 3
+hull 3
+leav 3
+long 3
+malu 3
+mediterranean 3
+nativ 3
+nut 3
+on 3
+product 3
+skin 3
+sweet 3
+white 3
+although 2
+amygdalin 2
+amygdalu 2
+archaeolog 2
+asia 2
+autumn 2
+bear 2
+best 2
+bitter 2
+cultivar 2
+cultiv 2
+cyanid 2
+deadli 2
+diamet 2
+drupe 2
+east 2
+edibl 2
+endocarp 2
+especi 2
+europ 2
+even 2
+far 2
+flesh 2
+form 2
+genu 2
+graft 2
+green 2
+grow 2
+hard 2
+human 2
+india 2
+infloresc 2
+insid 2
+larger 2
+levant 2
+littl 2
+market 2
+matur 2
+middl 2
+north 2
+number 2
+outer 2
+pakistan 2
+pale 2
+part 2
+part 2
+peach 2
+prunu 2
+rang 2
+raw 2
+region 2
+reveal 2
+rootstock 2
+select 2
+serrat 2
+shell 2
+spring 2
+state 2
+third 2
+though 2
+two 2
+type 2
+type 2
+unit 2
+varieti 2
+variou 2
+wide 2
+world 2
+worldwid 2
+year 2
+year 2
+yellow 2
+abil 1
+absenc 1
+acid 1
+afghanistan 1
+africa 1
+ag 1
+aim 1
+allergi 1
+almost 1
+along 1
+altern 1
+america 1
+ancient 1
+anoth 1
+appar 1
+appear 1
+appear 1
+argu 1
+armenia 1
+arrang 1
+attract 1
+attribut 1
+azerbaijan 1
+bacteri 1
+becom 1
+becom 1
+begin 1
+beginn 1
+believ 1
+benefici 1
+blanch 1
+bloom 1
+blossom 1
+botan 1
+botan 1
+branch 1
+break 1
+bred 1
+bronz 1
+brought 1
+brown 1
+budd 1
+bud 1
+burgh 1
+california 1
+caus 1
+central 1
+characterist 1
+cherri 1
+chew 1
+chill 1
+china 1
+christian 1
+cider 1
+classifi 1
+climat 1
+climat 1
+coat 1
+colonist 1
+commerci 1
+common 1
+commonli 1
+consist 1
+consum 1
+contain 1
+control 1
+control 1
+cook 1
+corrug 1
+countri 1
+cover 1
+cover 1
+creat 1
+crop 1
+crush 1
+cultiv 1
+cultur 1
+cur 1
+cutt 1
+cyme 1
+dark 1
+decod 1
+densiti 1
+desir 1
+dessert 1
+determin 1
+develop 1
+diamond 1
+differ 1
+diseas 1
+distinguish 1
+domestica 1
+domest 1
+dormanc 1
+downi 1
+dozen 1
+drink 1
+dry 1
+due 1
+earlier 1
+earliest 1
+eastward 1
+eaten 1
+econom 1
+ect 1
+egypt 1
+epicuticular 1
+estic 1
+exampl 1
+exist 1
+expos 1
+exterior 1
+fact 1
+fade 1
+famili 1
+farmer 1
+fatal 1
+fenzliana 1
+fleshi 1
+flower 1
+flower 1
+follow 1
+food 1
+form 1
+fresh 1
+fritsch 1
+fruit' 1
+full 1
+fungal 1
+garbag 1
+garden 1
+genet 1
+genom 1
+germani 1
+glycosid 1
+gradual 1
+graft 1
+greek 1
+green-color 1
+grei 1
+grey-green 1
+grow 1
+grower 1
+grower 1
+grow 1
+growth 1
+half 1
+handl 1
+health 1
+heap 1
+height 1
+hopf 1
+hot 1
+hour 1
+howev 1
+i. 1
+iamet 1
+iceland 1
+ild 1
+import 1
+inch 1
+includ 1
+indu 1
+ing 1
+injuri 1
+instead 1
+introduct 1
+iran 1
+itali 1
+jar 1
+jordan 1
+juic 1
+kernel 1
+king 1
+ladizinski 1
+larg 1
+late 1
+later 1
+layer 1
+leatheri 1
+lend 1
+like 1
+like 1
+lipski 1
+lmond 1
+mak 1
+margin 1
+margin 1
+mark 1
+mai 1
+mean 1
+measur 1
+mechan 1
+member 1
+method 1
+mild 1
+million 1
+month 1
+must 1
+mutant 1
+mutat 1
+mysteri 1
+mytholog 1
+name 1
+nic 1
+non-organ 1
+nors 1
+northern 1
+northernmost 1
+ntention 1
+numeria 1
+occasion 1
+often 1
+ogen 1
+onto 1
+open 1
+optim 1
+orchard 1
+origin 1
+oung 1
+outsid 1
+oval 1
+pair 1
+partli 1
+pest 1
+petal 1
+petal 1
+petiol 1
+pit 1
+plant 1
+plant 1
+plum 1
+poland 1
+pomac 1
+possibli 1
+prefer 1
+prefer 1
+prepar 1
+present 1
+probabl 1
+problem 1
+produc 1
+produc 1
+produc 1
+prone 1
+propag 1
+propag 1
+protect 1
+protein 1
+prussic 1
+purplish 1
+rais 1
+reach 1
+readili 1
+recent 1
+red 1
+refer 1
+religi 1
+remain 1
+remov 1
+remov 1
+report 1
+requir 1
+research 1
+result 1
+result 1
+reticul 1
+ripe 1
+river 1
+root 1
+rose 1
+rough 1
+royal 1
+russet 1
+russett 1
+second 1
+second-lead 1
+seedcoat 1
+select 1
+select 1
+shape 1
+shell 1
+shoot 1
+shore 1
+sieversii 1
+signific 1
+simpl 1
+simultan 1
+singli 1
+sist 1
+site 1
+six 1
+size 1
+size 1
+slightli 1
+small 1
+soften 1
+sold 1
+south 1
+southern 1
+spite 1
+spread 1
+spur 1
+stand 1
+still 1
+subgenera 1
+subgenu 1
+sucker 1
+suggest 1
+summer 1
+summer 1
+sunlight 1
+surround 1
+taken 1
+tall 1
+tast 1
+taxon 1
+temperatur 1
+term 1
+thick 1
+thought 1
+thousand 1
+thu 1
+time 1
+ting 1
+todai 1
+tomb 1
+ton 1
+total.th 1
+toxic 1
+tradit 1
+tral 1
+transform 1
+transport 1
+treat 1
+tri-color 1
+trimm 1
+true 1
+trunk 1
+turkei 1
+tutankhamun' 1
+twig 1
+unclear 1
+undersid 1
+unintention 1
+unshel 1
+upon 1
+us 1
+us 1
+valu 1
+warm 1
+water 1
+wax 1
+well-known 1
+western 1
+wet 1
+wholli 1
+wide 1
+winter 1
+within 1
+wny 1
+woodi 1
+xocarp 1
+yellowish-whit 1
+zohari 1

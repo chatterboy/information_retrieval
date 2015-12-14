@@ -1,7 +1,8 @@
-#define SINGLE
+//#define SINGLE
 
 #include <cstdio>
 #include <cstring>
+#include <iostream>
 #include <string>
 #include <vector>
 #include <algorithm>
@@ -10,7 +11,7 @@
 using namespace std;
 
 typedef pair<string, pair<int, double>> Cube;
-typedef map<string, pair<int, vector<pair<int, int>>>> IIndex;
+typedef map<string, pair<int, vector<pair<int, double>>>> IIndex;
 
 const int BUFFER_SIZE = 128;
 
@@ -28,19 +29,32 @@ void getFiles(vector<string> & fileName) {
 #ifdef SINGLE
 	fileName.push_back(string("tfIdfSingle.txt"));
 #else
-	puts("df");
+	fileName = {
+		"almond.txt", "apple.txt", "banana.txt", "bmw.txt", "car.txt",
+		"computer.txt", "dog.txt", "dragon fruit.txt", "durian.txt", "ferrari.txt",
+		"food.txt", "football.txt", "ford.txt", "google.txt", "grape.txt",
+		"guava.txt", "horse.txt", "internet.txt", "kiwifruit.txt", "korean melon.txt",
+		"mango.txt", "mangosteen.txt", "maple.txt", "michael jackson.txt", "movie.txt",
+		"music.txt", "musician.txt", "naver.txt", "papaya.txt", "pear.txt",
+		"pine.txt", "pineapple.txt", "rabbit.txt", "romantic music.txt", "samsung.txt",
+		"sausage.txt", "strawberry.txt", "tangerine.txt", "tomato.txt", "tree.txt",
+		"walnut.txt", "watermelon.txt", "yahoo.txt"
+	};
 #endif
 }
 
 void makeTokens(vector<Cube> & cube, vector<string> & fileName) {
 	int n = fileName.size();
 	for (int i = 0; i < n; i++) {
-		FILE * fin = fopen(fileName[i].c_str(), "r");
+		string fr = "";
+		fr += "tfidf\\" + fileName[i];
+		FILE * fin = fopen(fr.c_str(), "r");
 		while (readLineFile(fin)) {
 			char w[BUFFER_SIZE] = {0};
 			double tf;
 			double idf;
-			sscanf(buf, "%s %lf %lf", w, &tf, &idf);
+			sscanf(buf, "%s %lf %lf\n", w, &tf, &idf);
+//			cube.push_back(make_pair(string(w), make_pair(i, 10000. * tf * idf)));
 			cube.push_back(make_pair(string(w), make_pair(i, tf * idf)));
 		}
 		fclose(fin);
@@ -63,14 +77,16 @@ void printTokens(vector<Cube> & cube) {
 	for (auto e : cube) printf("%s %f %f\n", e.first.c_str(), e.second.first, e.second.second);
 }
 
-typedef map<string, pair<int, vector<pair<int, int>>>> IIndex;
-
 void printIIndex(IIndex & pack) {
+	FILE * fout = fopen("iindex\\iindex.txt", "w");
 	for (auto a : pack) {
 		int n = a.second.second.size();
-		printf("%s %d\n", a.first.c_str(), a.second.first);
-		for (auto b : a.second.second) printf("%d %d\n", b.first, b.second);
+//		printf("%s %d\n", a.first.c_str(), a.second.first);
+//		for (auto b : a.second.second) printf("%d %d\n", b.first, b.second);	
+		fprintf(fout, "%s %d\n", a.first.c_str(), a.second.first);
+		for (auto b : a.second.second) fprintf(fout, "    %d %f\n", b.first, b.second);
 	}
+	fclose(fout);
 }
 
 // 
@@ -100,4 +116,6 @@ int main() {
 	makeInvertedIndex(pack, cube);
 
 	printIIndex(pack);
+
+	puts("successfully completed!");
 }
